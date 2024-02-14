@@ -1,0 +1,103 @@
+{% extends 'backend/dashboard/main.html' %}
+{% load form_tags %}
+{% load static %}
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <form action="{% url 'router_edit' data.id %}" method="post" id="user_form">
+                    {% csrf_token %}
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="font-weight-bold">Edit Router</h3>
+                        </div>
+                        <div class="card-body">
+                                <div class="row">
+                                     <div class="form-group col-md-12">
+                                        <div class="form-label text-uppercase">Name <span class="text-danger">*</span></div>
+                                        {% input type='text' name='name' value=data.name class='form-control required' placeholder="" %}
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <div class="form-label text-uppercase">Server IP <span class="text-danger">*</span></div>
+                                        {% input type='text' name='ip_address' value=data.ip_address class='form-control required' placeholder="" %}
+                                    </div>
+                                     <div class="form-group col-md-12">
+                                        <div class="form-label text-uppercase">Api Port<span class="text-danger">*</span></div>
+                                        {% input class="form-control required" type="text" id="api_port" value=data.api_port name="api_port" placeholder="" %}
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <div class="form-label text-uppercase">SSH Port<span class="text-danger">*</span></div>
+                                        {% input class="form-control required" type="text" id="ssh_port" value=data.ssh_port name="ssh_port" placeholder="" %}
+
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <div class="form-label text-uppercase">User Name</div>
+                                        {% input type='text' name='user_name' class='form-control required' value=data.user_name placeholder="" %}
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <div class="form-label text-uppercase">Password</div>
+                                        {% input name="password" type="password" id="password" class='form-control required' value=data.password placeholder="" %}
+                                        <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"> </span>
+                                    </div>
+
+
+
+{#                                    <div class="form-group col-md-12">#}
+{#                                        <div class="form-label text-uppercase">Mikrotik Version</div>#}
+{#                                        {% select router_version_list name='version' selected='v1' class_list='required' %}#}
+{#                                    </div>#}
+{##}
+{#                                    <div class="form-group col-md-12">#}
+{#                                        <div class="form-label text-uppercase">Api Request Timeout</div>#}
+{#                                        {% input class="form-control required" value="10" type="number" id="api_request_time" name="api_request_time" placeholder="" %}#}
+{#                                    </div>#}
+
+
+                                    <div class="form-group col-md-12 mb-0">
+                                        <button class="btn btn-sm btn-primary" type="submit">Save</button>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+        <script type="text/javascript" src="{% static 'assets/plugins/jquery-validation/jquery.validate.js' %}"></script>
+
+    <script>
+     $(document).ready(function () {
+         $("#user_form").validate({
+             rules: {
+                },
+              messages: {
+                name: "Provide Router Name.",
+                ip_address: "Provide Router IP address.",
+                user_name: "Provide Router username.",
+                password: "Provide Router password.",
+                api_port: "Provide Router Api Port.",
+                ssh_port: "Provide Router SSH Port.",
+            },
+             errorPlacement: function(error, element) {
+                error.insertAfter(element); // Display the error message after the invalid input element
+            },
+         });
+
+
+
+
+
+
+     });
+
+
+
+    </script>
+
+
+{% endblock %}

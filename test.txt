@@ -1,0 +1,22 @@
+package_names = request.POST.getlist('package_name[]')
+            package_prices = request.POST.getlist('package_price[]')
+
+            form.save(commit=True)
+            form.package_name = package_names
+            form.package_price = package_prices
+            records_to_insert = []
+            for name, price in zip(package_names, package_prices):
+                if not SellerPackage.objects.filter(seller_id=form.instance.id, package_name=name).exists():
+                    records_to_insert.append(SellerPackage(seller_id=form.instance.id, package_name=name, price=price))
+            with transaction.atomic():
+                SellerPackage.objects.bulk_create(records_to_insert)
+
+
+
+
+{'name': 'General', 'code': 'G-1001', 'status': '1'},
+        {'name': 'System Admin', 'code': 'SA-2002', 'status': '1'},
+        {'name': 'Super Admin', 'code': 'SUA-3003', 'status': '1'},
+        {'name': 'General Admin', 'code': 'GA-4004', 'status': '1'},
+        {'name': 'Reseller', 'code': 'RS-5005', 'status': '1'},
+        {'name': 'Sub Reseller', 'code': 'GA-6006', 'status': '1'}

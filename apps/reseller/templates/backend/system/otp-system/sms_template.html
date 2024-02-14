@@ -1,0 +1,339 @@
+{% extends 'backend/dashboard/main.html' %}
+{% block content %}
+    <h1>SMS Template</h1>
+
+    <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-header" style="background-color: #fff">
+                    <p class="card-title m-0 p-2">SMS Templates</p>
+                </div>
+
+                <div class="card-body d-flex align-items-center justify-content-center">
+                    <div class="row">
+                        <div class="col-4 tabs">
+                            <div class="row">
+                                <a href="#" class="py-3 col-12 active" onclick="showTab(0)">Phone Number Verification</a>
+                                <a href="#" class="py-3 col-12" onclick="showTab(1)">Password Reset</a>
+                                <a href="#" class="py-3 col-12" onclick="showTab(2)">Bill Reminder</a>
+                                <a href="#" class="py-3 col-12" onclick="showTab(3)">Hotspot Expire Alert</a>
+                                <a href="#" class="py-3 col-12" onclick="showTab(4)">Pppoe Expire Alert</a>
+                                <a href="#" class="py-3 col-12" onclick="showTab(5)">Pppoe Creation</a>
+                                <a href="#" class="py-3 col-12" onclick="showTab(6)">Bill Payment</a>
+                            </div>
+                        </div>
+                        <div class="col-8 tab-contents">
+                            <!-- ===== Phone Number Verification Start ===== -->
+                            <div>
+                                <form action="" method="POST">
+                                    <input name="_method" type="hidden" value="">
+                                    <input type="hidden" name="_token" value="">
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label">SMS Body</label>
+                                        <div class="col-md-10">
+                                        <textarea name="body" class="form-control" placeholder="Type.." rows="6"
+                                                  required="">[[code]] is your Mobile verification code for [[site_name]].</textarea>
+                                            <small class="form-text text-danger">**N.B : Do Not Change The Variables
+                                                Like [[
+                                                ____ ]].**</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label">Template ID</label>
+                                        <div class="col-md-10">
+                                            <input type="text" name="template_id" value="" class="form-control"
+                                                   placeholder="Template ID">
+                                            <small class="form-text text-danger">**N.B : Template ID is Required Only
+                                                for
+                                                Fast2SMS DLT Manual**</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 text-right">
+                                        <button type="submit" class="btn btn-primary">Update Settings</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- ====== Phone Number Verification End ====== -->
+
+                            <!-- =========== Password Reset Start =========== -->
+                            <div>
+                                <form action="" method="POST">
+                                    <input name="_method" type="hidden" value="">
+                                    <input type="hidden" name="_token" value="">
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label">SMS Body</label>
+                                        <div class="col-md-10">
+                                            <textarea name="body" class="form-control" placeholder="Type.." rows="6"
+                                                      required="">t</textarea>
+                                            <small class="form-text text-danger">**N.B : Do Not Change The Variables
+                                                Like [[ ____ ]].**</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label">Template ID</label>
+                                        <div class="col-md-10">
+                                            <input type="text" name="template_id" value="" class="form-control"
+                                                   placeholder="Template ID">
+                                            <small class="form-text text-danger">**N.B : Template ID is Required Only
+                                                for Fast2SMS DLT Manual**</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 text-right">
+                                        <button type="submit" class="btn btn-primary">Update Settings</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- ============ Password Reset End ============ -->
+
+                            <!-- =========== Bill Remainder Start =========== -->
+                            <div>
+                                <form action="" method="POST">
+                                    <input name="_method" type="hidden" value="">
+                                    <input type="hidden" name="_token" value="">
+                                    <div class="form-group row">
+                                        <div class="col-md-2">
+                                            <label class="col-from-label">Activation</label>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <div class="switch-wrapper m-0">
+                                                <input type="checkbox" id="bill_reminder" class="switch-input" checked>
+                                                <label for="bill_reminder" class="switch-label"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label">SMS Body</label>
+                                        <div class="col-md-10">
+                                            <textarea name="body" class="form-control" placeholder="Type.." rows="6"
+                                                      required="" style="line-height: 17px;">Dear [[username]] Bill Tk [[bill_amount]] Pay your bill before [[expire_date]] . payment link https://tpnwifi.net/users/login  or stuff. Thanks</textarea>
+                                            <small class="form-text text-danger">**N.B : Do Not Change The Variables
+                                                Like [[ ____ ]].**</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label">Template ID</label>
+                                        <div class="col-md-10">
+                                            <input type="text" name="template_id" value="" class="form-control"
+                                                   placeholder="Template ID">
+                                            <small class="form-text text-danger">**N.B : Template ID is Required Only
+                                                for Fast2SMS DLT Manual**</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 text-right">
+                                        <button type="submit" class="btn btn-primary">Update Settings</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- ============ Bill Remainder End ============ -->
+
+                            <!-- ===== Hotspot Expire Alert Start ===== -->
+                            <div>
+                                <form action="" method="POST">
+                                    <input name="_method" type="hidden" value="">
+                                    <input type="hidden" name="_token" value="">
+                                    <div class="form-group row">
+                                        <div class="col-md-2">
+                                            <label class="col-from-label">Activation</label>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <div class="switch-wrapper m-0">
+                                                <input type="checkbox" id="hotspot_expire_alert" class="switch-input"
+                                                       checked>
+                                                <label for="hotspot_expire_alert" class="switch-label"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label">SMS Body</label>
+                                        <div class="col-md-10">
+                                            <textarea name="body" class="form-control" placeholder="Type.." rows="6"
+                                                      required="" style="line-height: 17px;">Your delivery status has been updated to [[delivery_status]]  for Order code : [[order_code]]</textarea>
+                                            <small class="form-text text-danger">**N.B : Do Not Change The Variables
+                                                Like [[ ____ ]].**</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label">Template ID</label>
+                                        <div class="col-md-10">
+                                            <input type="text" name="template_id" value="" class="form-control"
+                                                   placeholder="Template ID">
+                                            <small class="form-text text-danger">**N.B : Template ID is Required Only
+                                                for Fast2SMS DLT Manual**</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 text-right">
+                                        <button type="submit" class="btn btn-primary">Update Settings</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- ===== Hotspot Expire Alert End ===== -->
+
+                            <!-- ===== Pppoe Expire Alert Start ===== -->
+                            <div>
+                                <form action="" method="POST">
+                                    <input name="_method" type="hidden" value="">
+                                    <input type="hidden" name="_token" value="">
+                                    <div class="form-group row">
+                                        <div class="col-md-2">
+                                            <label class="col-from-label">Activation</label>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <div class="switch-wrapper m-0">
+                                                <input type="checkbox" id="pppoe_expire_alert" class="switch-input"
+                                                       checked>
+                                                <label for="pppoe_expire_alert" class="switch-label"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label">SMS Body</label>
+                                        <div class="col-md-10">
+                                            <textarea name="body" class="form-control" placeholder="Type.." rows="6"
+                                                      required="" style="line-height: 17px;">your bill Tk [[bill_amount]] expire_date [[expire_date]] payment link https://tpnwifi.net/users/loginLogin &amp; password (your mobile)</textarea>
+                                            <small class="form-text text-danger">**N.B : Do Not Change The Variables
+                                                Like [[ ____ ]].**</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label">Template ID</label>
+                                        <div class="col-md-10">
+                                            <input type="text" name="template_id" value="" class="form-control"
+                                                   placeholder="Template ID">
+                                            <small class="form-text text-danger">**N.B : Template ID is Required Only
+                                                for Fast2SMS DLT Manual**</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 text-right">
+                                        <button type="submit" class="btn btn-primary">Update Settings</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- ===== Pppoe Expire Alert End ===== -->
+
+                            <!-- ===== Pppoe Creation Start ===== -->
+                            <div>
+                                <form action="" method="POST">
+                                    <input name="_method" type="hidden" value="">
+                                    <input type="hidden" name="_token" value="">
+                                    <div class="form-group row">
+                                        <div class="col-md-2">
+                                            <label class="col-from-label">Activation</label>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <div class="switch-wrapper m-0">
+                                                <input type="checkbox" id="pppoe_creation" class="switch-input"
+                                                       checked>
+                                                <label for="pppoe_creation" class="switch-label"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label">SMS Body</label>
+                                        <div class="col-md-10">
+                                            <textarea name="body" class="form-control" placeholder="Type.." rows="6"
+                                                      required="" style="line-height: 17px;">Wellcome to [[site_name]]. Username: [[username]] and Password: [[password]] . any query contact us MIZAN KAZIRHAT:01827603043/BAPPY DAKBANGLA:01835266471/MIZAN2 switch GEIT:01824410847. Thanks</textarea>
+                                            <small class="form-text text-danger">**N.B : Do Not Change The Variables
+                                                Like [[ ____ ]].**</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label">Template ID</label>
+                                        <div class="col-md-10">
+                                            <input type="text" name="template_id" value="" class="form-control"
+                                                   placeholder="Template ID">
+                                            <small class="form-text text-danger">**N.B : Template ID is Required Only
+                                                for Fast2SMS DLT Manual**</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 text-right">
+                                        <button type="submit" class="btn btn-primary">Update Settings</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- ===== Pppoe Creation End ===== -->
+
+                            <!-- ===== Bill Payment Start ===== -->
+                            <div>
+                                <form action="" method="POST">
+                                    <input name="_method" type="hidden" value="">
+                                    <input type="hidden" name="_token" value="">
+                                    <div class="form-group row">
+                                        <div class="col-md-2">
+                                            <label class="col-from-label">Activation</label>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <div class="switch-wrapper m-0">
+                                                <input type="checkbox" id="bill_payment" class="switch-input"
+                                                       checked>
+                                                <label for="bill_payment" class="switch-label"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label">SMS Body</label>
+                                        <div class="col-md-10">
+                                            <textarea name="body" class="form-control" placeholder="Type.." rows="6"
+                                                      required="" style="line-height: 17px;">Username: [[username]] Bill Tk [[bill_amount]] was paid .Thanks</textarea>
+                                            <small class="form-text text-danger">**N.B : Do Not Change The Variables
+                                                Like [[ ____ ]].**</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label">Template ID</label>
+                                        <div class="col-md-10">
+                                            <input type="text" name="template_id" value="" class="form-control"
+                                                   placeholder="Template ID">
+                                            <small class="form-text text-danger">**N.B : Template ID is Required Only
+                                                for Fast2SMS DLT Manual**</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3 text-right">
+                                        <button type="submit" class="btn btn-primary">Update Settings</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- ===== Bill Payment End ===== -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Make the first tab active by default
+    showTab(0);
+
+    // Add click event listeners to all tabs
+    const tabs = document.querySelectorAll('.tabs a');
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', function (event) {
+            event.preventDefault();
+            showTab(index);
+        });
+    });
+});
+
+function showTab(index) {
+    const tabContents = document.querySelectorAll('.tab-contents > div');
+    const tabs = document.querySelectorAll('.tabs a');
+
+    tabContents.forEach((tabContent, i) => {
+        if (i === index) {
+            tabContent.classList.add('active');
+            tabs[i].classList.add('btn', 'btn-primary', 'text-left');
+        } else {
+            tabContent.classList.remove('active');
+            tabs[i].classList.remove('btn', 'btn-primary', 'text-left');
+        }
+    });
+}
+    </script>
+{% endblock %}

@@ -1,0 +1,166 @@
+{% extends 'backend/dashboard/main.html' %}
+{% load static %}
+{% block header_resource %}
+        <link rel="stylesheet" href="{% static 'assets/plugins/toastr/toastr.min.css' %}">
+
+    <style>
+  .table tr td:nth-child(7) {
+
+      font-size: 18px;
+      text-align: center;
+  }
+
+   .table th:nth-child(7)
+   {
+        text-align: center;
+   }
+   .btn
+   {
+       font-size: 15px!important;
+    line-height: 20px!important;
+   }
+</style>
+    {% endblock %}
+
+{% block content %}
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="row justify-content-between align-items-center pl-4 pr-4 border-bottom pb-3">
+                    <h4 class="card-title d-flex align-items-center m-0">({{ name }}) Hotspot Package List </h4>
+                          {% if user.user_type == 'RS-5005' %}
+                        {% else %}
+                         <a  href="{% url 'assign_new_package'  id %}" style="height: 40px;vertical-align: middle;display: flex; align-items: center;" class="btn btn-primary" >Assign New Package</a>
+                    {% endif %}
+                </div>
+
+
+                <div class="table-responsive pt-3">
+                    <table id="router_table" class="table dataTable table-bordered" style="width:100%">
+                        <caption></caption>
+                        <th></th>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <form action="" method="post" id="seller_own_hotspot_package_price_update">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Price </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="submit">Add</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
+{% block extra_js %}
+        <script type="text/javascript" src="{% static 'assets/plugins/jquery-validation/jquery.validate.js' %}"></script>
+    <script type="application/javascript" src="{% static 'assets/plugins/toastr/toastr.min.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+            $('#router_table').DataTable(
+                {
+                    dom: "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                        "<'row'<'col-sm-12'tr>>" +
+                        "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+                    ordering: true,
+                    serverSide: true,
+                     ajax: {
+                    url: '{% url "seller_own_hotspot_package_list" %}',
+                    type: 'POST',
+                    data: {
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    }
+                         },
+                    rowCallback: function (row, data, index) {
+                        $('td:eq(0)', row).html(index + 1);
+                    },
+                    "columns": [
+                        {title: "#", data: "count", "orderable": false, type: "num"},
+                        {title: "Package", data: "package", "orderable": true, type: "string"},
+                        {title: "Price", data: "price", "orderable": true, type: "string"},
+                        {title: "Customer Price", data: "seller_price", "orderable": true, type: "string"},
+                        {width: '30%', title: "Action", "data": "action", "orderable": false},
+
+                    ],
+                    "pageLength": 10 // change the page length option to display 50 rows per page
+                }
+            );
+        });
+
+         function add_customer_price(assign_package_id) {
+            $.ajax({
+                url: '{% url 'seller_own_hotspot_package_price_update' %}',
+                type: 'GET',
+                contentType: 'application/json',
+                data: {
+                    "assign_package_id": assign_package_id
+                },
+                success: function (data) {
+                    $('.modal-body').html(data);
+                    $('#exampleModal').modal('show');
+                    $(".select2").select2({
+                        minimumResultsForSearch: Infinity
+                    })
+
+
+                },
+                error: function (xhr, status, error) {
+                    toastr.error('Error: ' + xhr.responseJSON.error); // Show error
+                }
+            });
+        }
+
+        $('#seller_own_hotspot_package_price_update').submit(function (event) {
+            event.preventDefault();
+            var formData = $("#seller_own_hotspot_package_price_update").serializeArray();
+            var data = {};
+            $(formData).each(function (index, obj) {
+
+                data[obj.name] = obj.value;
+            });
+            console.log(data);
+            data['csrfmiddlewaretoken'] = '{{ csrf_token }}'
+
+            $.ajax({
+                type: 'POST',
+                url: '{% url 'seller_own_hotspot_package_price_update' %}',
+                data: data,
+                success: function (response) {
+                    toastr.success(response.success)
+                    $('#router_table').DataTable().ajax.reload();
+                    $('#exampleModal').modal('hide');
+                },
+                error: function (xhr) {
+                    debugger
+                    toastr.error('Error: ' + xhr.responseJSON.error);
+                }
+            });
+        });
+
+         $("#seller_own_hotspot_package_price_update").validate({
+            errorPlacement: function (error, element) {
+                error.insertAfter(element); // Display the error message after the invalid input element
+            },
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% load form_tags custom_tags %}
+    <div class="form-group col-md-12">
+        <input type="text" name="customer_id" value="{{ customer_id }}" hidden>
+        <div class="form-label text-uppercase">Wifi Ip Address <span class="text-danger">*</span></div>
+        {% input type='text' name='ip_address' class='form-control required' placeholder="127.0.0.100" %}
+    </div>

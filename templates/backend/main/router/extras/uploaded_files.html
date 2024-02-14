@@ -1,0 +1,79 @@
+{% extends 'backend/dashboard/main.html' %}
+{% load static %}
+{% block content %}
+    <div class="row justify-content-end m-3">
+        <a href="{% url 'uploaded_files' %}"
+           style="height: 40px; width: 160px;vertical-align: middle;display: flex; align-items: center;"
+           class="btn btn-primary">Upload New File</a>
+    </div>
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="row justify-content-between pl-4 pr-4 border-bottom pb-3">
+                    <div class="col-md-4">
+                        <h4 class="card-title m-0">All uploaded files</h4>
+                    </div>
+                    <div class="col-md-3 input-group">
+                        <select class="custom-select" id="inputGroupSelect">
+                            <option selected>Sort by newest</option>
+                            <option value="1">Sort by oldest</option>
+                            <option value="2">Sort by smallest</option>
+                            <option value="3">Sort by largest</option>
+                        </select>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-8 m-0">
+                                <input type="search" class="form-control" placeholder="Search"
+                                       aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            </div>
+                            <div class="col-md-4 d-flex align-items-center m-0">
+                                <div>
+                                    <button class="btn btn-outline-secondary" type="button">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {#                <div class="col-lg-12 grid-margin stretch-card mt-4">#}
+                {#                    <div class="card-deck">#}
+                {#                        <div class="card">#}
+                {#                            <img class="img-fluid" src="{% static 'assets/images/slide1.jpg' %}" alt="Responsive image">#}
+                {#                            <div class="card-body">#}
+                {#                                <h6 class="d-flex">#}
+                {#                                    <span class="text-truncate title">VID-20230427-WA0019</span>#}
+                {#                                    <span class="ext">.mp4</span>#}
+                {#                                </h6>#}
+                {#                                <p style="font-size: 9px; color: #8392a5;">6.17 KB</p>#}
+                {#                            </div>#}
+                {#                        </div>#}
+                {#                        <div class="card">#}
+                {#                            <img class="img-fluid" src="{% static 'assets/images/slide1.jpg' %}" alt="Responsive image">#}
+                {#                            <div class="card-footer">#}
+                {#                                <p class="text-muted m-0">VID-20230427-WA0019 .mp4</p>#}
+                {#                                <small class="text-muted">6.17 KB</small>#}
+                {#                            </div>#}
+                {#                        </div>#}
+                {#                        <div class="card">#}
+                {#                            <img class="img-fluid" src="{% static 'assets/images/slide1.jpg' %}" alt="Responsive image">#}
+                {#                            <div class="card-footer">#}
+                {#                                <p class="text-muted m-0">VID-20230427-WA0019 .mp4</p>#}
+                {#                                <small class="text-muted">6.17 KB</small>#}
+                {#                            </div>#}
+                {#                        </div>#}
+                {#                    </div>#}
+                {#                </div>#}
+
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}
+{% block extra_js %}
+    <script>
+        //...
+    </script>
+{% endblock %}

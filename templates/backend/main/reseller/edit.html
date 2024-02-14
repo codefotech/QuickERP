@@ -1,0 +1,159 @@
+{% extends 'backend/dashboard/main.html' %}
+{% load form_tags %}
+{% load static %}
+
+{% block header_resource %}
+    <link rel="stylesheet" href="{% static 'assets/plugins/toastr/toastr.min.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <form action="{% url 'reseller_edit' data.id %}" method="post" id="user_form">
+                    {% csrf_token %}
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="font-weight-bold">Edit Seller</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <div class="form-label text-uppercase">Name <span class="text-danger">*</span></div>
+                                    {% input type='text' name='username' value=data.user.username class='form-control required' placeholder="" %}
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <div class="form-label text-uppercase">Mobile <span class="text-danger">*</span>
+                                    </div>
+                                    {% input type='text' name='user_mobile' value=data.user.user_mobile class='form-control required' placeholder="+88018********" %}
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <div class="form-label text-uppercase">Email <span class="text-danger">*</span>
+                                    </div>
+                                    {% input type='email' name='email' value=data.user.email class='form-control required' placeholder="" %}
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <div class="form-label text-uppercase">Minimum Bill Day <span class="text-danger">*</span></div>
+                                    {% input type="text" name="minimum_bill_day" value=data.minimum_bill_day class='form-control required' placeholder="" %}
+                                </div>
+{#                                <div class="form-group col-md-6">#}
+{#                                    <div class="form-label text-uppercase">Password <span class="text-danger">*</span>#}
+{#                                    </div>#}
+{#                                    {% input name="password" id="password" type="text" value=data.user.password class='form-control required' placeholder="*******" %}#}
+{#                                </div>#}
+{##}
+{#                                <div class="form-group col-md-6">#}
+{#                                    <div class="form-label text-uppercase">Confirm Password</div>#}
+{#                                    {% input hidden name="confirm_password" type="password" value=data.user.password class='form-control' placeholder="*******" %}#}
+{#                                </div>#}
+
+                                <div class="form-group col-md-3">
+                                    <div class="form-label text-uppercase">Hotspot IP Range Start <span class="text-danger">*</span></div>
+                                    {% input type="text" name="hotspot_ip_range_start" value=data.hotspot_ip_range_start|default:''  class='form-control' placeholder="127.0.0.2" %}
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <div class="form-label text-uppercase">Hotspot IP Range End <span class="text-danger">*</span></div>
+                                    {% input type="text" name="hotspot_ip_range_end" value=data.hotspot_ip_range_end|default:''  class='form-control' placeholder="127.0.0.254" %}
+                                </div>
+{##}
+{#                                <div class="form-group col-md-12">#}
+{#                                     <div class="form-label text-uppercase">Packages</div>#}
+{#                                    <div class="package-data row"></div>#}
+{#                                </div>#}
+
+                                <div class="form-group col-md-12 mb-0 text-center">
+                                    <button style="width: 300px" class="btn btn-sm btn-primary" type="submit">Save</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+    <script type="text/javascript" src="{% static 'assets/plugins/jquery-validation/jquery.validate.js' %}"></script>
+    <script type="application/javascript" src="{% static 'assets/plugins/toastr/toastr.min.js' %}"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#router_id").select2({
+                minimumResultsForSearch: Infinity // Disable search for single selections
+            })
+            $.validator.addMethod("validMobileNumber", function (value, element) {
+                // Remove any spaces or dashes from the input value
+
+                var number = value
+
+                return number.startsWith("+88") && number.length == 14 && /^[0-9+]+$/.test(number);
+
+            }, "Please enter a valid mobile number with +88.");
+
+            $("#user_form").validate({
+                rules: {
+                    router_id: {
+                        required: true
+                    },
+                    confirm_password: {
+                        equalTo: "#password"
+                    },
+                    user_mobile: {
+                        validPhoneNumber: false,
+                        required: true,
+                        validMobileNumber: true
+                    },
+                },
+                messages: {
+                    username: "provide seller name.",
+                    user_mobile: "Please enter your mobile number with +88.",
+                    email: "provide seller email.",
+                    password: "please enter a password.",
+                    router_id: "please select a router.",
+                },
+                errorPlacement: function (error, element) {
+                    error.insertAfter(element);
+                },
+            });
+
+            {#$("#router_id").on("input", function () {#}
+            {#    $(".package-data").html('');#}
+            {#    var csrftoken = $('input[name="csrfmiddlewaretoken"]').val();#}
+            {##}
+            {#    var requestData = {#}
+            {#        "router_id": $(this).val()#}
+            {#    }#}
+            {##}
+            {#    $.ajax({#}
+            {#        url: '{% url 'get_package_info_by_router' %}',#}
+            {#        method: 'POST',#}
+            {#        dataType: 'json',#}
+            {#        data: JSON.stringify(requestData),#}
+            {#        headers: {#}
+            {#            'X-CSRFToken': csrftoken#}
+            {#        },#}
+            {#        success: function (data) {#}
+            {#            data.data.forEach(function (data){#}
+            {#                $(".package-data").append('<div class="form-group col-md-6"><input class="form-check d-inline pl-2" type="checkbox" name="package_name[]" value="'+data.name+'"> <p class="p-0 m-0 d-inline pr-1">'+data.name+'</p>' +#}
+            {#                                            '<input class="form-control" type="text" placeholder="price" style="" name="package_price[]" value=""> </div>')#}
+            {#            })#}
+            {#        },#}
+            {#        error: function (xhr, status, error) {#}
+            {#            // Handle errors here#}
+            {#            toastr.error(xhr.responseJSON.error.split("error:")[1].trim());#}
+            {##}
+            {#        }#}
+            {#    });#}
+            {##}
+            {#});#}
+
+
+        });
+    </script>
+
+
+{% endblock %}

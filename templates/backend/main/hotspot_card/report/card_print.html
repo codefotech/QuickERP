@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <style>
+        .dotted-border {
+            border: 0.5px dotted gray;
+            width: 125px;/* 1px width, dotted style, black color */
+            margin: 5px;
+              vertical-align: center;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container" style="text-align: center">
+    <table style="width: 100%; align-items: center; border-collapse: collapse;
+">
+        <tr style="text-align: center">
+            <td class="dotted-border" style="text-align: center; vertical-align: middle;">Hello</td>
+            <td class="dotted-border" style="text-align: center; vertical-align: middle;">Hello</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

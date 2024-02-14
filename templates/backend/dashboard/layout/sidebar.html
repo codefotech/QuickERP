@@ -1,0 +1,58 @@
+<!-- partial:partials/_sidebar.html -->
+
+<nav id="sidebar" class="sidebar sidebar-offcanvas">
+
+    <ul class="nav flex-column">
+      <!-- Main start -->
+
+    <!-- Main end -->
+    {% for item in menu_items %}
+        {% if item.parent %}
+             <li class="nav-item nav-item-head">
+                <h5 style="">{{ item.label }}</h5>
+            </li>
+            {% else %}
+             <li class="nav-item user position-relative">
+            <a href="{% if item.link %}{{ item.link }}{% else %}#{% endif %}" class="nav-link user" {% if item.subMenu %}onclick="toggleSubmenu('{{ item.label|cut:" " }}')" {% endif %}>
+                <i class="{{ item.icon }}"></i>
+                <span>{{ item.label }}</span>
+                {% if item.subMenu %}
+                    <i class="menu-arrow"></i>
+                {% endif %}
+            </a>
+            {% if item.subMenu %}
+                <ul id="{{ item.label|cut:" " }}" class="nav flex-column pl-4">
+                    {% for subitem in item.subMenu %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ subitem.link }}">
+                                <i class="{{ subitem.icon }}"></i>
+                                <span>{{ subitem.label }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+        {% endif %}
+
+    {% endfor %}
+</ul>
+
+</nav>
+<!-- partial -->
+
+<script>
+    function toggleSubmenu(submenuId) {
+        $("#" + submenuId).slideToggle();
+    }
+
+    function setActive(parentId) {
+        var parentLi = $("#" + parentId).closest('.nav-item a');
+        var allActive = $(".nav-item a.active");
+        allActive.removeClass("active");
+        parentLi.addClass("active");
+    }
+
+
+</script>
+

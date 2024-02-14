@@ -1,0 +1,30 @@
+{% extends 'backend/dashboard/main.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card overflow-hidden">
+                <div class="card-header py-3 bg-white">HTTPS Activation</div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-center">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                {#                <div class="card-body text-center">#}
+                {#                    <label class="aiz-switch aiz-switch-success mb-0">#}
+                {#                        <input type="checkbox" onchange="updateSettings(this, 'FORCE_HTTPS')" checked="">#}
+                {#                        <span class="slider round"></span>#}
+                {#                    </label>#}
+                {#                </div>#}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+    <script>
+        // ....
+    </script>
+{% endblock %}

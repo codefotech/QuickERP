@@ -1,0 +1,16 @@
+Django==4.2.4
+passlib==1.7.4
+Pillow==8.0.0
+PyMySQL==1.1.0
+python-dotenv==1.0.0
+sqlparse==0.4.4
+typing_extensions==4.7.1
+whitenoise==6.5.0
+requests~=2.31.0
+urllib3==2.0.4
+uvicorn==0.23.2
+websockets==11.0.3
+channels==4.0.0
+wheel==0.40.0
+urllib3==1.26.7
+librouteros

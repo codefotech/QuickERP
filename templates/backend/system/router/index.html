@@ -1,0 +1,38 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-Time Router Data</title>
+</head>
+<body>
+<ul id="data-list"></ul>
+<script>
+    const socket = new WebSocket('ws://' + '127.0.0.1:8000' + '/ws/router_data/');
+
+    socket.onopen = (event) => {
+        console.log('WebSocket connection opened:', event);
+    };
+
+    socket.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+
+        // Check if the data contains an error message
+        if (data.error) {
+            // Display the error message in the <ul> element
+            const dataList = document.getElementById('data-list');
+            dataList.innerHTML = `<li style="color: red;">${data.error}</li>`;
+        } else {
+            // Display regular data in the <ul> element
+            const dataList = document.getElementById('data-list');
+            dataList.innerHTML = `<li>${data}</li>` + dataList.innerHTML;
+        }
+
+        console.log('Received message:', data);
+    };
+
+    socket.onclose = (event) => {
+        console.log('WebSocket connection closed:', event);
+    };
+</script>
+</body>
+</html>

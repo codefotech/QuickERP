@@ -1,0 +1,77 @@
+{% extends 'backend/dashboard/main.html' %}
+{% load static %}
+
+{% block header_resource %}
+    <link rel="stylesheet" href="{% static 'assets/plugins/toastr/toastr.min.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4 grid-margin stretch-card">
+            <div class="card card-rounded">
+                <div class="card-header bg-white">
+                    <p class="card-title m-0 p-2">AMSMS OTP</p>
+                </div>
+
+                {% csrf_token %}
+
+                <div class="card-body d-flex align-items-center justify-content-center">
+                    <div class="switch-wrapper">
+                        <input type="radio" value="amsms_otp" id="amsms_otp" name="otp_configuration"
+                               class="switch-input" onchange="otp_config_update()" {% if amsms_otp %} checked
+                               {% endif %}>
+                        <label for="amsms_otp" class="switch-label"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 grid-margin stretch-card">
+            <div class="card card-rounded">
+                <div class="card-header bg-white">
+                    <p class="card-title m-0 p-2">Fast2SMS OTP</p>
+                </div>
+
+                <div class="card-body d-flex align-items-center justify-content-center">
+                    <div class="switch-wrapper">
+                        <input type="radio" value="fast2sms_otp" id="fast2sms_otp" name="otp_configuration"
+                               class="switch-input" onchange="otp_config_update()" {% if fast2sms_otp %} checked {% endif %}>
+                        <label for="fast2sms_otp" class="switch-label"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block extra_js %}
+    <script type="application/javascript" src="{% static 'assets/plugins/toastr/toastr.min.js' %}"></script>
+    <script>
+        function otp_config_update() {
+            var otp_value = $('input[name="otp_configuration"]:checked').val();
+            debugger
+            $.ajax({
+                url: '{% url "otp_configuration_update"%}',
+                type: 'POST',
+                data: {
+                    'config': otp_value,
+                    'csrfmiddlewaretoken': $('input[name="csrfmiddlewaretoken"]').val()
+                },
+                success: function (response) {
+                    if (response.message) {
+                        toastr.success(response.message); // Show success message
+                    }
+                },
+                error: function (xhr, status, error) {
+                    toastr.error('Error: ' + error); // Show error message if the request fails
+                }
+            });
+        }
+
+        $(document).ready(function () {
+
+        });
+
+
+    </script>
+{% endblock %}

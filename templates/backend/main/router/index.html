@@ -1,0 +1,139 @@
+{% extends 'backend/dashboard/main.html' %}
+{% block header_resource %}
+    <style>
+        .table tr td:nth-child(7) {
+
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .table th:nth-child(7) {
+            text-align: center;
+        }
+
+        .table tr td:nth-child(6)
+        {
+            text-align: center;
+        }
+        .table tr td:nth-child(2), .table th:nth-child(2)
+        {
+            display: none;
+        }
+        .table tr td:nth-child(8), .table th:nth-child(8)
+        {
+            display: none;
+        }
+
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="row justify-content-between align-items-center pl-4 pr-4 border-bottom pb-3">
+                    <h4 class="card-title d-flex align-items-center m-0">All PPPOE Routers</h4>
+                    <a href="{% url 'router_add' %}"
+                       style="height: 40px;vertical-align: middle;display: flex; align-items: center;"
+                       class="btn btn-primary">Add New Router</a>
+                </div>
+
+
+                <div class="table-responsive pt-3">
+                    <table id="router_table" class="table dataTable table-bordered" style="width:100%">
+                        <caption></caption>
+                        <th></th>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+    <script>
+        $(document).ready(function () {
+            var table = $('#router_table').DataTable(
+                {
+                    dom: "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                        "<'row'<'col-sm-12'tr>>" +
+                        "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+                    ordering: true,
+                    serverSide: true,
+                    "ajax": '{% url "router_data" %}',
+                    "columnDefs": [
+                        {"className": "dt-center", "targets": "_all"}],
+                    rowCallback: function (row, data, index) {
+                        $('td:eq(0)', row).html(index + 1);
+                    },
+                    "columns": [
+                        {title: "#", data: "count", "orderable": false, type: "num"},
+                        {title: "id", data: "id", "orderable": false, hidden: true, type: "num"},
+                        {title: "Server Name", data: "name", "orderable": true, type: "string"},
+                        {title: "IP Address", data: "ip_address", "orderable": true, type: "string"},
+                        {title: "Port", data: "api_port", "orderable": true, type: "string"},
+                        {title: "Username", data: "user_name", "orderable": true, type: "string"},
+                        {title: "Active Status", data: "active_status", "orderable": true, type: "string"},
+                        {title: "Active Status Value", data: "active_status_val", "orderable": true, type: "string"},
+                        {title: "Connection Status", data: "status", "orderable": true, type: "string"},
+                        {width: '30%', title: "Action", "data": "action", "orderable": false},
+                    ],
+                    "pageLength": 10 // change the page length option to display 50 rows per page
+                }
+            );
+
+
+
+
+            function routerStatusCheckAndUpdate(data) {
+
+                // Do something with the data
+                console.log("Data retrieved:", data);
+                // Example: Send data to the server
+                $.ajax({
+                    type: 'POST',
+                    url: '{% url 'get_router_active_status' %}',
+                    data: {data: JSON.stringify(data)}, headers: {
+                        'X-CSRFToken': '{{ csrf_token }}'
+                    },
+
+                    success: function (response) {
+                        let active_inactive_data = JSON.parse(response.data)
+                        if (active_inactive_data != null || active_inactive_data !== undefined) {
+                            var active = '<i class="fa-solid fa-circle text-success"></i>'
+                            var inactive = '<i class="fa-solid fa-circle text-danger"></i>'
+                            let routerData = table.column(1).data().toArray();
+                            routerData.forEach(function (value, index) {
+                                var cellData = table.cell({row: index, column: 7}).data();
+                                console.log('celldata',cellData, 'type', active_inactive_data[value])
+                                if (active_inactive_data[value] === true && cellData === 0) {
+                                    table.cell(index, 6).data(active);
+                                    table.cell(index, 7).data('1');
+                                } else if (active_inactive_data[value] == false && cellData == 1)
+                                {
+                                    debugger
+                                     table.cell(index, 6).data(inactive);
+                                     table.cell(index, 7).data(0);
+                                }
+                                console.log(`Value at index ${index}: ${value}`);
+                            });
+
+                            console.log("Data sent to server successfully!", response.data);
+                        }
+
+
+                    },
+                    error: function (error) {
+                        console.error("Error sending data to server:", error);
+                    }
+                });
+            }
+
+            function routerStatusUpdate() {
+                let router_data = table.column(1).data().toArray();
+                routerStatusCheckAndUpdate(router_data);
+            }
+
+
+            setInterval(routerStatusUpdate, 2000);
+        });
+    </script>
+{% endblock %}

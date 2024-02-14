@@ -1,0 +1,6 @@
+{% load form_tags custom_tags %}
+    <div class="form-group col-md-12">
+        <input type="text" name="customer_id" value="{{ customer_id }}" hidden>
+        <div class="form-label text-uppercase">Package List <span class="text-danger">*</span></div>
+        {% select package name="package_id" blank=True class_list='form-control required select2' placeholder="" %}
+    </div>

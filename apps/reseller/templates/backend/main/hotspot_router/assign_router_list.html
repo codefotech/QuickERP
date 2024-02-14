@@ -1,0 +1,67 @@
+{% extends 'backend/dashboard/main.html' %}
+{% block header_resource %}
+    <style>
+        .table tr td:nth-child(7) {
+
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .table th:nth-child(7) {
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="row justify-content-between align-items-center pl-4 pr-4 border-bottom pb-3">
+                    <h4 class="card-title d-flex align-items-center m-0">Assign Hotspot Router List</h4>
+                    <a href="{% url 'assign_hotspot_router' %}"
+                       style="height: 40px;vertical-align: middle;display: flex; align-items: center;"
+                       class="btn btn-primary">Assign New</a>
+                </div>
+
+
+                <div class="table-responsive pt-3">
+                    <table id="router_table" class="table dataTable table-bordered" style="width:100%">
+                        <caption></caption>
+                        <th></th>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+    <script>
+        $(document).ready(function () {
+            $('#router_table').DataTable({
+                dom: "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                    "<'row'<'col-sm-12'tr>>" +
+                    "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+
+                ajax: {
+                    url: '{% url "assign_hotspot_router_list" %}',
+                    type: 'POST',
+                    data: {
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    }
+                },
+                columnDefs: [
+                    {className: "dt-center", targets: "_all"}
+                ],
+                columns: [
+                    {title: "#", data: "count", orderable: false, type: "num"},
+                    {title: "Seller Name", data: "name", orderable: true, type: "string"},
+                    {title: "Action", data: "action", orderable: false}
+                ],
+                pageLength: 10,
+                processing: true,
+                 ordering: true,
+                serverSide: true,
+            });
+        });
+    </script>
+{% endblock %}

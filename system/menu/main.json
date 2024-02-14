@@ -1,0 +1,290 @@
+{
+  "menuItems": [
+    {
+      "parent": true,
+      "label": "Main",
+      "icon": "",
+      "link": "",
+      "subMenu": []
+    },
+    {
+      "label": "IP TV ",
+      "icon": "fa-solid fa-receipt",
+      "app": "iptv",
+      "link": "iptv_list",
+      "subMenu": []
+    },
+    {
+      "label": "PPPOE Router",
+      "icon": "fa-solid fa-network-wired",
+      "link": "",
+      "app": "router",
+      "subMenu": [
+        {
+          "label": "PPPOE Router List",
+          "icon": "far fa-dot-circle",
+          "link": "router_list"
+        },
+        {
+          "label": "Import PPPoE",
+          "icon": "far fa-dot-circle",
+          "link": "router_import"
+        }
+      ]
+    },
+    {
+      "label": "Hotspot Router",
+      "icon": "fa-solid fa-satellite-dish",
+      "link": "",
+      "app": "hotspot_router",
+      "subMenu": [
+        {
+          "label": "Hotspot Router List ",
+          "icon": "far fa-dot-circle",
+          "link": "hotspot_router_list"
+        },
+        {
+          "label": "Assign Hotspot Router",
+          "icon": "far fa-dot-circle",
+          "link": "assign_hotspot_router_list"
+        }
+      ]
+    },
+    {
+      "label": "Sellers",
+      "icon": "fa-regular fa-user",
+      "link": "",
+      "app": "seller",
+      "subMenu": [
+        {
+          "label": "All Seller",
+          "icon": "far fa-dot-circle",
+          "link": "seller_list"
+        }
+      ]
+    },
+    {
+      "label": "ReSellers",
+      "icon": "fa-regular fa-user",
+      "link": "",
+      "app": "reseller",
+      "subMenu": [
+        {
+          "label": "All ReSeller",
+          "icon": "far fa-dot-circle",
+          "link": "reseller_list"
+        }
+      ]
+    },
+    {
+      "label": "PPPOE Package",
+      "icon": "fa-solid fa-cube",
+      "link": "",
+      "app": "package",
+      "subMenu": [
+        {
+          "label": "PPPOE Package List",
+          "icon": "far fa-dot-circle",
+          "link": "package_list"
+        },
+        {
+          "label": "Seller PPPOE Package List",
+          "icon": "far fa-dot-circle",
+          "link": "seller_own_package_list"
+        },
+        {
+          "label": "Assign PPPOE Package",
+          "icon": "far fa-dot-circle",
+          "link": "assign_package"
+        }
+      ]
+    },
+    {
+      "label": "Hotspot Package",
+      "icon": "fa-solid fa-cube",
+      "link": "",
+      "app": "hotspot_package",
+      "subMenu": [
+        {
+          "label": "Hotspot Package List",
+          "icon": "far fa-dot-circle",
+          "link": "hotspot_package_list"
+        },
+        {
+          "label": "Seller Hotspot Package List",
+          "icon": "far fa-dot-circle",
+          "link": "seller_own_hotspot_package_list"
+        },
+        {
+          "label": "Assign Hotspot Package",
+          "icon": "far fa-dot-circle",
+          "link": "assign_hotspot_package"
+        }
+      ]
+    },
+    {
+      "label": "Hotspot Card",
+      "icon": "fa-regular fa-money-bill-1",
+      "link": "hotspot_card_list",
+      "app": "hotspot_card",
+      "subMenu": [
+      ]
+    },
+    {
+      "parent": true,
+      "label": "Customer",
+      "icon": "",
+      "link": "",
+      "subMenu": []
+    },
+    {
+      "label": "Hotspot Customer",
+      "icon": "fa-solid fa-hospital-user",
+      "link": "",
+      "app": "hotspot_customer",
+      "subMenu": [
+        {
+          "label": "Hotspot Customer List",
+          "icon": "fa-solid fa-wifi",
+          "link": "hotspot_customer_list"
+        },
+        {
+          "label": "Hotspot Online Customer",
+          "icon": "fa-solid fa-wifi text-success",
+          "link": "hotspot_customer_list"
+        },
+        {
+          "label": "Hotspot Offline Customer",
+          "icon": "fa-solid fa-wifi text-danger",
+          "link": "hotspot_customer_list"
+        }
+      ]
+    },
+    {
+      "label": "PPPOE Customer",
+      "icon": "fa-solid fa-house-user",
+      "link": "",
+      "app": "pppoe_customer",
+      "subMenu": [
+        {
+          "label": "PPPOE Customer List",
+          "icon": "fa-solid fa-wifi",
+          "link": "pppoe_customer_list"
+        },
+        {
+          "label": "PPPOE Online Customer",
+          "icon": "fa-solid fa-wifi text-success",
+          "link": "pppoe_customer_list"
+        },
+        {
+          "label": "PPPOE Offline Customer",
+          "icon": "fa-solid fa-wifi text-danger",
+          "link": "pppoe_customer_list"
+        }
+      ]
+    },
+    {
+      "parent": true,
+      "label": "System",
+      "icon": "",
+      "link": "",
+      "subMenu": []
+    },
+    {
+      "label": "User Management",
+      "icon": "fas fa-user-cog",
+      "link": "",
+      "app": "user",
+      "subMenu": [
+        {
+          "label": "User List",
+          "icon": "fas fa-users",
+          "link": "user_list"
+        },
+        {
+          "label": "User Permission",
+          "icon": "fas fa-key",
+          "link": "user_permission"
+        }
+      ]
+    },
+    {
+      "label": "Payment Getway",
+      "icon": "fa-solid fa-money-bill-transfer",
+      "link": "",
+      "app": "config",
+      "subMenu": [
+        {
+          "label": "Bkash",
+          "icon": "fa-solid fa-dollar-sign",
+          "link": "bkash_config"
+        }
+      ]
+    },
+    {
+      "label": "SMS System",
+      "icon": "fa-solid fa-mobile-retro",
+      "link": "",
+      "app": "config",
+      "subMenu": [
+        {
+          "label": "SMS Configurations",
+          "icon": "fas fa-users",
+          "link": "otp_configuration"
+        },
+        {
+          "label": "SMS Templates",
+          "icon": "far fa-dot-circle",
+          "link": "sms_template"
+        },
+        {
+          "label": "Set SMS Credentials",
+          "icon": "far fa-dot-circle",
+          "link": "set_otp_credentials"
+        }
+      ]
+    },
+    {
+      "label": "Settings",
+      "icon": "fa-solid fa-wrench",
+      "link": "",
+      "app": "config",
+      "subMenu": [
+        {
+          "label": "General Settings",
+          "icon": "fa-solid fa-gears",
+          "link": "admin_general_settings"
+        },
+        {
+          "label": "App Settings",
+          "icon": "fa-brands fa-app-store-ios",
+          "link": "app_settings"
+        }
+      ]
+    },
+    {
+      "label": "Report",
+      "icon": "fa-solid fa-newspaper",
+      "link": "app_settings",
+      "app": "reports",
+      "subMenu": [
+        {
+          "label": "Package Purchase Report",
+          "icon": "fa-regular fa-newspaper",
+          "link": "bkash_purchase_history",
+          "app": "config",
+          "subMenu": [
+          ]
+        },
+        {
+          "label": "Expense Report",
+          "icon": "fa-regular fa-newspaper",
+          "link": "app_settings",
+          "app": "config",
+          "subMenu": [
+          ]
+        }
+      ]
+    }
+  ]
+}

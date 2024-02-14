@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+ 	<head>
+      	 <meta charset=utf-8>
+         <meta content="ie=edge" http-equiv=x-ua-compatible>
+         <title>Easy TV</title>
+         <link href="favicon.html" rel="shortcut icon" type=image/x-icon>
+         <link href="favicon.html" rel=icon type=image/x-icon>
+         <meta content="width=device-width,initial-scale=1" name=viewport>
+         <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500" rel=stylesheet>
+         <link href="{% static 'butterfly/css/icofont.css' %}" rel=stylesheet>
+         <link href="{% static 'butterfly/css/bootstrap.min.css' %}" rel=stylesheet>
+         <link href="{% static 'butterfly/css/owl.carousel.min.css' %}" rel=stylesheet>
+         <link href="{% static 'butterfly/css/style.css' %}" rel=stylesheet>
+         <link href="{% static 'butterfly/css/responsive.css' %}" rel=stylesheet>
+         <link href="{% static 'butterfly/css/butterfly-style.css' %}" rel=stylesheet>
+	 	 <link rel="stylesheet" media="screen" href="{% static 'butterfly/css/noyan.css' %}">
+         <link href="{% static 'butterfly/video-js/video-js.min.css' %}" rel="stylesheet">
+         <script src="{% static 'butterfly/video-js/video.min.js' %}"></script>
+         <script src="{% static 'butterfly/video-js/videojs-contrib-hls.min.js' %}"></script>
+	      
+	</head>
+	<body class="bg-img body-bg" style="background-image: url('channel-logo/bg2.png');" oncontextmenu="return false;">
+	
+<!------------------Disable right-click of mouse, F12 key, and save key combinations on page -------------------------->
+	<script language="JavaScript">
+		window.onload = function() {
+		document.addEventListener("contextmenu", function(e){
+		e.preventDefault();
+		}, false);
+		document.addEventListener("keydown", function(e) {
+		//document.onkeydown = function(e) {
+		// "I" key
+		if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+		disabledEvent(e);
+		}
+		// "J" key
+		if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+		disabledEvent(e);
+		}
+		// "S" key + macOS
+		if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+		disabledEvent(e);
+		}
+		// "U" key
+		if (e.ctrlKey && e.keyCode == 85) {
+		disabledEvent(e);
+		}
+		// "F12" key
+		if (event.keyCode == 123) {
+		disabledEvent(e);
+		}
+		}, false);
+		function disabledEvent(e){
+		if (e.stopPropagation){
+		e.stopPropagation();
+		} else if (window.event){
+		window.event.cancelBubble = true;
+		}
+		e.preventDefault();
+		return false;
+		}
+		};
+    </script>
+      
+      <div class=preloader-wrap>
+      <div class=preloader><span></span> <span></span> <span></span> <span></span></div>
+      </div>
+      <div class="line-effect line-bg-1"></div>
+      <div class="line-effect line-bg-2"></div>
+      <div class="line-effect line-bg-3"></div>
+      <div class="bg-img color-blue main-container">
+         <header class="main-header" style="margin-bottom: 15px;">
+            <div class=container>
+               <div class="clearfix row">
+               <!--div class="pull-right clearfix col-xs-4 exs-full-width">
+                  <a class="pull-right" href="#" style="padding-right: 14px;"><img src="img/appdownload.svg" style="height:30px; width:auto;"></a>
+                      <div class="pull-right header-right" style="padding-right: 10px;">
+                         <ul class="list-inline social-icons">
+                            <li><a href="#"><i class="icofont icofont-mobile-phone"></i></a>
+                            <li><a href="#"><i class="icofont icofont-social-facebook"></i></a>
+                         </ul>
+                      </div>
+                   </div-->
+<!--                  </div>-->
+               </div>
+            </div>
+         </header>
+         <div class="main-body">
+		 
+            <div class=container> 
+            <div class=col-md-12>
+            <div class="col-md-3 hidden-xs noleftpadding">
+            <div class="panel panel-default" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+            <div class="panel-heading c-list">
+            <span class="title" style="color:green;" >Channel List</span>
+                <input type="text" class="search-hover pull-right" name="" placeholder="search...">
+            </div>
+            <ul class="list-group" id="contact-list" style="overflow-y: scroll;">
+			
+			
+            
+       		<!---------------------------------------------CHANNEL START--------------------------------------------->
+                
+                
+                <li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="http://tpnbd.net:8089/GTVHD/index.m3u8" data-name="Test">
+			                <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/index.png" alt="TEST" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">TEST</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="http://aklivetv.com:8080/deeptotv/tracks-v1a1/mono.m3u8" data-name="DEEPTO">
+			                <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/deeptotv.png" alt="TEST" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">DEEPTO</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/rtv-sg.stream/playlist.m3u8" data-name="GTV">
+			                <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/rtv.png" alt="RTV" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">RTV</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/mytv-up-off.stream/chunks.m3u8" data-name="GTV">
+			                <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/mytv.png" alt="MY TV" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">MY TV</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+                
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/atnws-sg.stream/chunks.m3u8" data-name="ATNNEWS">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/atnnews.png" alt="ATNNEWS" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">ATN NEWS</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/banglatvhd.stream/chunks.m3u8" data-name="BANGLA">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/bangla.png" alt="BANGLA" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">BANGLA TV</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/channel9hd.stream/chunks.m3u8" data-name="CHANNEL9">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/channelnine.png" alt="CHANNEL9" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">CHANNEL 9</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/asian-test-sample-ok-d.stream/chunks.m3u8" data-name="ASIAN TV">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/asian.png" alt="ASIAN TV" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">ASIAN TV</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/channeli-8-org.stream/chunks.m3u8" data-name="CHANNELI">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/channeli.png" alt="CHANNELI" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">CHANNEL I</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/atnbd-8-org.stream/chunks.m3u8" data-name="ATNBANGLA">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/atnbangla.png" alt="ATNBANGLA" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            <span class="name">ATN BANGLA</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                    <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/banglav000.stream/chunks.m3u8" data-name="BANGLAVISION">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/banglavision.png" alt="BANGLAVISION" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">BANGLA VISION</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                    <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/gaanbangla-8-orgd.stream/chunks.m3u8" data-name="GAAN BANGLA">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/gb.png" alt="GAAN BANGLA" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">GAAN BANGLA</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+								<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/independent-8-org.stream/chunks.m3u8" data-name="INDEPENDENT">
+			<div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/independent.png" alt="INDEPENDENT" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">INDEPENDENT</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				                <li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/somoyt000011226615544544.stream/chunks.m3u8" data-name="SOMOY">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/somoy.png" alt="SOMOY" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">SOMOY</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/satvoff5666.stream/chunks.m3u8" data-name="SATV">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/satv.png" alt="SATV" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">SATV</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/channel24-sg-e8e.stream/chunks.m3u8" data-name="CHANNEL 24">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/24.png" alt="CHANNEL 24" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">CHANNEL 24</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/boishakhitv-org.stream/chunks.m3u8" data-name="BOISHAKHI">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/boishakhitv.png" alt="BOISHAKHI" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">BOISHAKHI</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/dbcnews.stream/chunks.m3u8" data-name="DBCNEWS">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/dbcnews.png" alt="DBCNEWS" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">DBC NEWS</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+
+                
+                <li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/jamuna-test-sample-ok.stream/chunks.m3u8" data-name="JAMUNATV">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/jamunatv.png" alt="JAMUNATV" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">JAMUNA TV</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/news24local.stream/chunks.m3u8" data-name="NEWS24">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/news24.png" alt="NEWS24" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">NEWS 24</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+                
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/bijoy00.stream/chunks.m3u8" data-name="BIJOY TV">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/bijoy.png" alt="BIJOY TV" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">BIJOY TV</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/anandatv.stream/chunks.m3u8" data-name="ANANDA">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/ananda.png" alt="ANANDA" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">ANANDA</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/chsukoff.stream/chunks.m3u8" data-name="Channel S">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/s.png" alt="Channel S" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">Channel S</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/mycinema-up2.stream/chunks.m3u8" data-name="MY CINEMA">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/mycinema.png" alt="MY CINEMA" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">MY CINEMA</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/moviebanglalink2.stream/chunks.m3u8" data-name="Movie Bangla">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/mb.png" alt="Movie Bangla" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">Movie Bangla</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/biswabanglatv.stream/chunks.m3u8" data-name="Bishwa Bangla">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/bb24.png" alt="Bishwa Bangla" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">Bishwa bangla</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/alponatv.stream/chunks.m3u8" data-name="Alpona">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/alpona.png" alt="Alpona" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">ALpona</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/bangla21tv000889956-sg.stream/chunks.m3u8" data-name="Bangla 21">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/b21.png" alt="Bangla 21" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">Bangla 21</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/cumilla24.stream/chunks.m3u8" data-name="Cumilla 24">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/cumilla.png" alt="Cumilla 24" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">Cumilla 24</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/deshebideshe.stream/chunks.m3u8" data-name="Deshe Bideshe">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/db.png" alt="Deshe Bideshe" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">Deshe Bideshe</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/nantv.stream/chunks.m3u8" data-name="Nan TV">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/nan.png" alt="Nan TV" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">Nan TV</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/joyjatratv.stream/chunks.m3u8" data-name="Joy Jatra">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/joy.png" alt="Joy Jatra" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">Joy Jatra</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/varendratv.stream/chunks.m3u8" data-name="Varendra TV">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/varendra.png" alt="Varenda TV" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">Varendra TV</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/royaltv.stream/chunks.m3u8" data-name="Roal TV">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/roal.png" alt="Channel S" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">ROAL TV</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/rangiptv.stream/chunks.m3u8" data-name="Rang TV ">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/rang.png" alt="Rang TV" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">Rang TV</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/voicetv.stream/chunks.m3u8" data-name="Voice TV">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/voice.png" alt="Voice" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">Voice</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/panvisiontvs.stream/chunks.m3u8" data-name="Pan Vision">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/pv.png" alt="Pan Vision" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">Pan vision</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/nakshitv.stream/chunks.m3u8" data-name="Nokshi">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/nokshi.png" alt="Nokshi" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">Nokshi</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/jagoronitv.stream/chunks.m3u8" data-name="Jagoron">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/jagoron.png" alt="Jagoron" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">Jagoron</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/nrb-eu.stream/chunks.m3u8" data-name="NRB">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/nrb.png" alt="NRB" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">NRB</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/atnislamictv.stream/chunks.m3u8" data-name="ATN Islam">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/atnis.png" alt="ATN Islam" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">ATN Islam</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/titash.stream/chunks.m3u8" data-name="Titas">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/titas.png" alt="Titas" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">Titas</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/atnmusic.stream/chunks.m3u8" data-name="ATN Music">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/atnmusic.png" alt="ATN Music" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">ATN Music</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="http://103.132.180.245:8080/12/index.m3u8" data-name="NTV">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/ntv.png" alt="NTV" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">NTV</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="http://210.4.72.204/hls-live/livepkgr/_definst_/liveevent/livestream3.m3u8" data-name="Ekushe">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/21.png" alt="Ekushe" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">Ekushe</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="http://ctgiptv.kitv.live:1935/live/ASNet/asnetwork/8.m3u8" data-name="Ekattor">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/71.png" alt="Ekattor" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">Ekattor</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="http://aklivetv.com:8080/durantotv/tracks-v1a1/mono.m3u8" data-name="DURONTO">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/duronto.png" alt="duronto" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">DURONTO</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempx.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/mass.stream/chunks.m3u8" data-name="MAASRANGA">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/maasranga.png" alt="Channel" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">MAASRANGA</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://cdn.appv.jagobd.com:444/c2VydmVyX4RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/mohonatv00000223232244556633.stream/chunks.m3u8" data-name="MAASRANGA">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/mohona.png" alt="Channel" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">MOHONA</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://bdsl.jagobd.com:444/cZMLmVyX3RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/deshtv.stream/live-orgin/deshtv.stream/chunks.m3u8" data-name="Channel">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/deshtv.png" alt="DESH TV" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">DESH TV</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/btvnational-ctg.stream/chunks.m3u8" data-name="BTV CTG">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/btvctg.png" alt="BTV CTG" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">BTV CTG</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/btvbd-office-sg.stream/chunks.m3u8" data-name="BTV World">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/btvw.png" alt="BTV World" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">BTV World</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+
+						
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://edge01.iptv.digijadoo.net/live/star_jalsha_hd/chunks.m3u8" data-name="STARJALSHA">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/starjalsha.png" alt="STARJALSHA" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">STAR JALSHA</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://edge01.iptv.digijadoo.net/live/zee_bangla/chunks.m3u8" data-name="ZEEBANGLA">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/zeebangla.png" alt="ZEEBANGLA" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">ZEE BANGLA</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="http://dx3.gcdn.co/hindi-STARPLUSindia/index.m3u8" data-name="STAR PLUS">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/starplus.png" alt="STAR PLUS" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">STAR PLUS</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://edge01.iptv.digijadoo.net/live/zee_cinema/chunks.m3u8" data-name="ZEECINEMA">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/zeecinema.png" alt="ZEECINEMA" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">ZEECINEMA</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+                
+                
+                <li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="http://dx3.gcdn.co/hindi-SONYMAXHD/index.m3u8" data-name="SONYMAX">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/sonymaxhd.png" alt="SONYMAX" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">SONYMAX</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+				<li class="list-group-item">
+                    <div class="logo-container">
+                        <a class="playignitor vertical-align" href="javascript:void(0)" data-source="https://edge01.iptv.digijadoo.net/live/nickelodeon/playlist.m3u8" data-name="NICK">
+                            <div class="col-xs-12 col-sm-6">
+                            	<img src="channel-logo/nick.png" alt="NICK" class="img-responsive sidebar-menu-logo" />
+                            </div>                                          
+                            <div class="col-xs-12 col-sm-6 hidden">
+                            	<span class="name">NICK</span>                 
+                            </div>                                          
+                        <div class="clearfix"></div>
+                        </a>
+                    </div>
+                </li>
+				
+
+				
+
+				
+
+
+                 
+            
+            
+            <!--------------------------------------------------CHANNEL END------------------------------------------------------>
+            <!--------------------------------------------------RIGHT MENU END------------------------------------------------------>   
+            </ul>
+                     		</div>                        
+                  		</div>
+                    <div id="playerholder" class="col-md-9 embed-responsive embed-responsive-16by9" style=" background: #write; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding: 0;">
+                    <video-js id="player" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" data-setup='{"fluid": true,"autoplay": true}' poster="channel-logo/welcome.png">
+
+           	 	</video-js>      
+               </div> 
+            </div>
+                  
+  <!--============================================DOWN_MENU_START_HERE==============================-->                          
+
+               <div class='col-md-12'>
+                  <div class="owl-carousel" style="box-shadow: 0 -6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">  
+                     
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="#" data-name="GAZI TV"><img alt="" src="channel-logo/index.png"></a>
+                     </div>
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/rtv-sg.stream/playlist.m3u8" data-name="RTV"><img alt="" src="channel-logo/rtv.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="http://aklivetv.com:8080/deeptotv/tracks-v1a1/mono.m3u8" data-name="DEEPTO"><img alt="" src="channel-logo/deeptotv.png"></a>
+                     </div>
+					
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/mytv-up-off.stream/chunks.m3u8" data-name="MY TV"><img alt="" src="channel-logo/mytv.png"></a>
+                     </div>
+					
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/atnws-sg.stream/chunks.m3u8" data-name="ATN NEWS"><img alt="" src="channel-logo/atnnews.png"></a>
+                     </div>
+					
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/banglatvhd.stream/chunks.m3u8" data-name="BANGLA TV"><img alt="" src="channel-logo/bangla.png"></a>
+                     </div>
+					
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/channel9hd.stream/chunks.m3u8" data-name="CHANNEL 9"><img alt="" src="channel-logo/channelnine.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/asian-test-sample-ok-d.stream/chunks.m3u8" data-name="ASIAN"><img alt="" src="channel-logo/asian.png"></a>
+                     </div>
+					 
+					 					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/channeli-8-org.stream/chunks.m3u8" data-name="CHANNEL I"><img alt="" src="channel-logo/channeli.png"></a>
+                     </div>
+					 
+				       <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/atnbd-8-org.stream/chunks.m3u8" data-name="ATN BANGLA"><img alt="" src="channel-logo/atnbangla.png"></a>
+                     </div>	
+
+					 <div class="item">
+					 <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/banglav000.stream/chunks.m3u8" data-name="BANGLA VISION"><img alt="" src="channel-logo/banglavision.png"></a>
+					 </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/gaanbangla-8-orgd.stream/chunks.m3u8" data-name="Gaan Bangla"><img alt="" src="channel-logo/gb.png"></a>
+                     </div>
+					 
+					  <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/independent-8-org.stream/chunks.m3u8" data-name="INDEPENDENT"><img alt="" src="channel-logo/independent.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/somoyt000011226615544544.stream/chunks.m3u8" data-name="SOMOY"><img alt="" src="channel-logo/somoy.png"></a>
+                     </div>
+					 
+					  <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/satvoff5666.stream/chunks.m3u8" data-name="SA TV"><img alt="" src="channel-logo/satv.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/channel24-sg-e8e.stream/chunks.m3u8" data-name="C 24"><img alt="" src="channel-logo/24.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/boishakhitv-org.stream/chunks.m3u8" data-name="BOISHAKHI"><img alt="" src="channel-logo/boishakhitv.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/dbcnews.stream/chunks.m3u8" data-name="DBC NEWS"><img alt="" src="channel-logo/dbcnews.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/jamuna-test-sample-ok.stream/chunks.m3u8" data-name="JAMUNA"><img alt="" src="channel-logo/jamunatv.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/news24local.stream/chunks.m3u8" data-name="NEWS 24"><img alt="" src="channel-logo/news24.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/bijoy00.stream/chunks.m3u8" data-name="BIJOY TV"><img alt="" src="channel-logo/bijoy.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/anandatv.stream/chunks.m3u8" data-name="ANANDA"><img alt="" src="channel-logo/ananda.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/chsukoff.stream/chunks.m3u8" data-name="CHANNEL S"><img alt="" src="channel-logo/s.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/mycinema-up2.stream/chunks.m3u8" data-name="MY CYNEMA"><img alt="" src="channel-logo/mycinema.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/moviebanglalink2.stream/chunks.m3u8" data-name="MOVIE BANGLA"><img alt="" src="channel-logo/mb.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/biswabanglatv.stream/chunks.m3u8" data-name="BISHWA BANGLA"><img alt="" src="channel-logo/bb24.png"></a>
+                     </div>
+					 
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/alponatv.stream/chunks.m3u8" data-name="ALPONA TV"><img alt="" src="channel-logo/alpona.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/bangla21tv000889956-sg.stream/chunks.m3u8" data-name="BANGLA 21"><img alt="" src="channel-logo/b21.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/cumilla24.stream/chunks.m3u8" data-name="CUMILLA 24"><img alt="" src="channel-logo/cumilla.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/deshebideshe.stream/chunks.m3u8" data-name="DESHE BIDESHE"><img alt="" src="channel-logo/db.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/nantv.stream/chunks.m3u8" data-name="NAN TV"><img alt="" src="channel-logo/nan.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/joyjatratv.stream/chunks.m3u8" data-name="JOY JATRA"><img alt="" src="channel-logo/joy.png"></a>
+                     </div>
+					 
+					  <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/varendratv.stream/chunks.m3u8" data-name="VARENDRA TV"><img alt="" src="channel-logo/varendra.png"></a>
+                     </div>
+					 
+					  <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/royaltv.stream/chunks.m3u8" data-name="ROYAL TV"><img alt="" src="channel-logo/roal.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/rangiptv.stream/chunks.m3u8" data-name="RANG TV"><img alt="" src="channel-logo/rang.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/voicetv.stream/chunks.m3u8" data-name="VOICE"><img alt="" src="channel-logo/voice.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/panvisiontvs.stream/chunks.m3u8" data-name="PAN VISION"><img alt="" src="channel-logo/pv.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/nakshitv.stream/chunks.m3u8" data-name="NAKSHI TV"><img alt="" src="channel-logo/nokshi.png"></a>
+                     </div>
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/jagoronitv.stream/chunks.m3u8" data-name="JAGORONI"><img alt="" src="channel-logo/jagoron.png"></a>
+                     </div>
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/nrb-eu.stream/chunks.m3u8" data-name="NRB"><img alt="" src="channel-logo/nrb.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/atnislamictv.stream/chunks.m3u8" data-name="ATN ISLAM"><img alt="" src="channel-logo/atnis.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/titash.stream/chunks.m3u8" data-name="TITAS"><img alt="" src="channel-logo/titas.png"></a>
+                     </div>
+					 
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/atnmusic.stream/chunks.m3u8" data-name="ATN MUSIC"><img alt="" src="channel-logo/atnmusic.png"></a>
+                     </div>
+					 
+					  <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="http://103.132.180.245:8080/12/index.m3u8" data-name="NTV"><img alt="NTV" src="channel-logo/ntv.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="http://210.4.72.204/hls-live/livepkgr/_definst_/liveevent/livestream3.m3u8" data-name="EKUSHE"><img alt="" src="channel-logo/21.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="http://ctgiptv.kitv.live:1935/live/ASNet/asnetwork/8.m3u8" data-name="EKATTOR"><img alt="" src="channel-logo/71.png"></a>
+                     </div>
+					 
+					  <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="http://ctgiptv.kitv.live:1935/live/ddnfree/ddnfree/12.m3u8" data-name="DURONTO"><img alt="" src="channel-logo/duronto.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempx.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/mass.stream/chunks.m3u8" data-name="MASRANGA"><img alt="" src="channel-logo/maasranga.png"></a>
+					</div>
+       					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://cdn.appv.jagobd.com:444/c2VydmVyX4RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/mohonatv00000223232244556633.stream/chunks.m3u8" data-name="MOHONA"><img alt="MOHONA" src="channel-logo/mohona.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/btvnational-ctg.stream/chunks.m3u8" data-name="BTV CTG"><img alt="" src="channel-logo/btvctg.png"></a>
+                     </div>
+					 
+					 <div class="item">
+                     <a class="thumbnail" href="javascript:void(0)" data-source="https://tempskyview.jagobd.com:441/c5V6mmMyX7RpbEU9Mi8xNy8yMDEOGIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PT0mdFsaWRtaW51aiPhnPTI/btvbd-office-sg.stream/chunks.m3u8" data-name="BTV WORLD"><img alt="" src="channel-logo/btvw.png"></a>
+                     </div>
+					 
+                  </div>
+                  <a id="prev" href="javascript:void(0)" class="left carousel-control customPrevBtn">›</a>
+                  <a id="next" href="javascript:void(0)" class="right carousel-control customNextBtn">‹</a>
+               </div>
+                <!--div class='col-md-8'>
+                	<div class="footer-left">
+                		Copyright &copy; piXel network limited
+                	</div>
+                </div-->
+                 
+                 
+                 <!--div class="footer-content pull-right">
+                                <div class="footer-middle">
+                                    <ul class="list-inline">
+  <li class="list-inline-item">1 Online |</li>
+ <li class="list-inline-item">51 Today |</li>
+  <li class="list-inline-item">16188 Total</li>
+</ul>
+
+                                </div>
+                            </div-->
+                 
+                 
+                    
+            </div>
+               
+         </div>         
+
+      </div>
+ <div id="particles-js"><canvas class="particles-js-canvas-el" width="1365" height="920" style="width: 100%; height: 100%;"></canvas></div>
+	<script src="{% static 'butterfly/js/noyan.js' %}"></script>
+	<script src="{% static 'butterfly/js/noyan1.js' %}"></script>
+     
+   <script src="{% static 'butterfly/js/jquery-3.2.1.min.js' %}"></script>
+   <script src="{% static 'butterfly/js/bootstrap.min.js' %}"></script>
+   <script src="{% static 'butterfly/js/owl.carousel.min.js' %}"></script>
+   <script src="{% static 'butterfly/js/jquery.searchable-1.1.0.min.js' %}"></script>
+   <script src="{% static 'butterfly/js/scripts.js' %}"></script>
+
+
+</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><p style="flex: 0 0 auto; margin:0; padding-right:1rem;"><a href="https://easylinkbd.xyz" style="color:#aaa;"></a></p></section><script src="assets/web/assets/jquery/jquery.min.js' %}"></script>  <script src="assets/popper/popper.min.js' %}"></script>  <script src="assets/bootstrap/js/bootstrap.min.js' %}"></script>  <script src="assets/tether/tether.min.js' %}"></script>  <script src="assets/smoothscroll/smooth-scroll.js' %}"></script>  <script src="assets/sociallikes/social-likes.js' %}"></script>  <script src="assets/parallax/jarallax.min.js' %}"></script>  <script src="assets/theme/js/script.js' %}"></script>  <script src="assets/formoid/formoid.min.js' %}"></script>  
+   <section id="footer">
+<div class="copyright">
+<ul>
+	
+	<li style="text-align: center;">Important Notice: <br><font color="#e60cd9">: <font color="blue"><b>Live Stream is provided by third-pirty providers. <br>We do not host any content on this site. <br> Channels and trademarks displayed here are the  <br> copyright properties of their respective owners.</b></font></a> </font></li>
+	<br>
+	
+</ul>
+</div>
+</section>
+</html>

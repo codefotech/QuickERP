@@ -1,0 +1,211 @@
+{% extends 'backend/dashboard/main.html' %}
+{% load form_tags %}
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <form action="{% url 'seller_verification_form' %}" method="post" id="user_form">
+                    {% csrf_token %}
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Seller Verification Form</h4>
+                        </div>
+                        <div class="card-body row">
+
+                            <div class="col-md-8">
+                                <div class="col-md-12 py-3 my-3" style="background-color: #E5E5E5">
+                                    <div class="form-group m-0">
+                                        <div class="row">
+                                            <span style="font-size: 13px;" class="d-block col-sm-4">Text</span>
+                                            <input type="text" class="form-control col-sm-6 valid" id="name"
+                                                   placeholder="Name" style="height: 40px;border: none;">
+                                            <span style="font-size: 10px;"
+                                                  class="d-block col-sm-2 row align-self-center text-center"><a
+                                                    href="">&#9587;</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 py-3 my-3" style="background-color: #E5E5E5">
+                                    <div class="form-group m-0">
+                                        <div class="row">
+                                            <span style="font-size: 13px;" class="d-block col-sm-4">Text</span>
+                                            <input type="number" class="form-control col-sm-6 valid" id="phone"
+                                                   placeholder="Phone" style="height: 40px;border: none;">
+                                            <span style="font-size: 10px;"
+                                                  class="d-block col-sm-2 row align-self-center text-center"><a
+                                                    href="">&#9587;</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 py-3 my-3" style="background-color: #E5E5E5">
+                                    <div class="form-group m-0">
+                                        <div class="row my-3">
+                                            <span style="font-size: 13px;" class="d-block col-sm-4">Text</span>
+                                            <input type="text" class="form-control col-sm-6 valid" id="identity"
+                                                   placeholder="Identity" style="height: 40px;border: none;">
+
+                                            <span style="font-size: 10px;"
+                                                  class="d-block col-sm-2 row align-self-center text-center"><a
+                                                    href="">&#9587;</a></span>
+                                        </div>
+
+                                        <div class="row my-3">
+                                            <span style="font-size: 13px;" class="d-block col-sm-4"></span>
+                                            <input type="text" class="form-control col-sm-6 valid" id="passport"
+                                                   placeholder="Passport" style="height: 40px;border: none;">
+
+                                            <span style="font-size: 10px;"
+                                                  class="d-block col-sm-2 row align-self-center text-center"><a
+                                                    href="">&#9587;</a></span>
+                                        </div>
+
+                                        <div class="row my-3">
+                                            <span style="font-size: 13px;" class="d-block col-sm-4"></span>
+                                            <input type="number" class="form-control col-sm-6 valid" id="smart_nid"
+                                                   placeholder="SMart NID" style="height: 40px;border: none;">
+
+                                            <span style="font-size: 10px;"
+                                                  class="d-block col-sm-2 row align-self-center text-center"><a
+                                                    href="">&#9587;</a></span>
+                                        </div>
+
+                                        <div class="row my-3">
+                                            <span style="font-size: 13px;" class="d-block col-sm-4"></span>
+                                            <input type="number" class="form-control col-sm-6 valid" id="old_nid"
+                                                   placeholder="Old NID" style="height: 40px;border: none;">
+
+                                            <span style="font-size: 10px;"
+                                                  class="d-block col-sm-2 row align-self-center text-center"><a
+                                                    href="">&#9587;</a></span>
+                                        </div>
+
+                                        <div class="row my-3">
+                                            <span style="font-size: 13px;" class="d-block col-sm-4"></span>
+                                            <div class="col-sm-6">
+                                                <a href="#"
+                                                   style="height: 40px; width:155px; vertical-align: middle;display: flex; align-items: center;"
+                                                   class="btn btn-primary">Add Option</a>
+                                            </div>
+                                            <span style="font-size: 10px;"
+                                                  class="d-block col-sm-2 row align-self-center text-center"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 py-3 my-3" style="background-color: #E5E5E5">
+                                    <div class="form-group m-0">
+                                        <div class="row">
+                                            <span style="font-size: 13px;" class="d-block col-sm-4">File</span>
+                                            <div class="custom-file col-sm-6">
+                                                <input type="file" class="form-control custom-file-input"
+                                                       id="customFile"
+                                                       onchange="displayFileName()">
+                                                <label class="custom-file-label" for="customFile">ID Card Front
+                                                    Photo</label>
+                                            </div>
+                                            <span style="font-size: 10px;"
+                                                  class="d-block col-sm-2 row align-self-center text-center"><a
+                                                    href="">&#9587;</a></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-12 py-3 my-3" style="background-color: #E5E5E5">
+                                    <div class="form-group m-0">
+                                        <div class="row">
+                                            <span style="font-size: 13px;" class="d-block col-sm-4">File</span>
+                                            <div class="custom-file col-sm-6">
+                                                <input type="file" class="form-control custom-file-input"
+                                                       id="customFile"
+                                                       onchange="displayFileName()">
+                                                <label class="custom-file-label" for="customFile">ID Card Back
+                                                    Photo</label>
+                                            </div>
+                                            <span style="font-size: 10px;"
+                                                  class="d-block col-sm-2 row align-self-center text-center"><a
+                                                    href="">&#9587;</a></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <ul class="list-group my-3">
+                                    <li class="list-group-item btn-white" style="text-align: left; cursor: pointer;"
+                                        onclick="appenddToForm('text')">Text Input
+                                    </li>
+                                    <li class="list-group-item btn-white" style="text-align: left; cursor: pointer;"
+                                        onclick="appenddToForm('select')">Select
+                                    </li>
+                                    <li class="list-group-item btn-white" style="text-align: left; cursor: pointer;"
+                                        onclick="appenddToForm('multi-select')">Multiple Select
+                                    </li>
+                                    <li class="list-group-item btn-white" style="text-align: left; cursor: pointer;"
+                                        onclick="appenddToForm('radio')">Radio
+                                    </li>
+                                    <li class="list-group-item btn-white" style="text-align: left; cursor: pointer;"
+                                        onclick="appenddToForm('file')">File
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-12">
+                <div class="form-group text-right">
+                    <button class="btn btn-sm btn-primary" type="submit">Save</button>
+                </div>
+            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+    <script>
+        $(document).ready(function () {
+            $("#user_form").validate({
+                rules: {
+                    confirm_password: {
+                        equalTo: "#password"
+                    }
+                },
+                messages: {
+                    user_name: "Please enter your name.",
+                    ip_address: "Please enter ip_address.",
+                    api_port: "Please enter api_port.",
+                    email: {
+                        required: "Please enter an email address.",
+                        email: "Please enter a valid email address."
+                    },
+                    password: "Please enter a password.",
+                    confirm_password:
+                        {
+                            equalTo: "Password don't match."
+                        }
+                },
+                errorPlacement: function (error, element) {
+                    error.insertAfter(element); // Display the error message after the invalid input element
+                },
+            });
+        });
+    </script>
+
+    <script>
+        function displayFileName() {
+            const input = document.getElementById('customFile');
+            const label = document.querySelector('[for=customFile]');
+            if (input.files.length > 0) {
+                label.innerText = input.files[0].name;
+            } else {
+                label.innerText = '';
+            }
+        }
+    </script>
+
+
+{% endblock %}

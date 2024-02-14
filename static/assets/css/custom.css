@@ -1,0 +1,234 @@
+.dataTables_wrapper .dataTable .btn, .dataTables_wrapper .dataTable .fc button, .fc .dataTables_wrapper .dataTable button, .dataTables_wrapper .dataTable .ajax-upload-dragdrop .ajax-file-upload, .ajax-upload-dragdrop .dataTables_wrapper .dataTable .ajax-file-upload, .dataTables_wrapper .dataTable .swal2-modal .swal2-buttonswrapper .swal2-styled, .swal2-modal .swal2-buttonswrapper .dataTables_wrapper .dataTable .swal2-styled, .dataTables_wrapper .dataTable .wizard > .actions a, .wizard > .actions .dataTables_wrapper .dataTable a {
+    padding: 5px 15px;
+}
+
+.sidebar
+{
+    top: 70px!important;
+}
+.sidebar .nav:first-child
+{
+    padding-bottom: 150px;
+}
+.sidebar .nav .nav-item-head h5 {
+    padding: 10px 5px;
+    font-weight: 600;
+    border-radius: 0px;
+    border-left: 5px solid #0c4079;
+    background-color: rgba(12, 64, 121, 0.1);
+    margin-bottom: 10px;
+}
+
+.sidebar .nav .nav-item .nav-link {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    color: #6C7383;
+    transition-duration: 0.45s;
+    -webkit-transition-property: color;
+    border: none;
+    width: 100%;
+    background: transparent;
+
+}
+.sidebar
+{
+    position: fixed!important;
+}
+.sidebar-icon-only .sidebar .nav .nav-item .nav-link
+{
+      display: flex!important;
+    justify-content: center;
+
+}
+.sidebar .nav .nav-item .nav-link i
+{
+        height: 15px;
+    width: 15px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+/*@media screen and (max-width: 991px) {*/
+
+/*    .sidebar-offcanvas {*/
+/*        position: fixed;*/
+/*        max-height: calc(100vh - 60px);*/
+/*        top: 60px;*/
+/*        bottom: 0;*/
+/*        overflow: auto;*/
+/*        right: -235px;*/
+/*        -webkit-transition: all 0.25s ease-out;*/
+/*        -o-transition: all 0.25s ease-out;*/
+/*        transition: all 0.25s ease-out;*/
+/*    }*/
+
+/*}*/
+
+
+/* =================================================================*/
+/* ====================================
+  Checkbox Switch style
+=======================================*/
+.switch-wrapper {
+    margin: 20px;
+    display: inline-block;
+    float: left;
+}
+
+.switch-input {
+    display: none;
+}
+
+.switch-label {
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #eee;
+    position: relative;
+    border-radius: 100px;
+}
+
+.switch-label:before {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    border: 3px solid rgba(0, 0, 0, 0.15);
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 20px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.switch-input:checked + .switch-label {
+    background-color: #49E845;
+    transition: all 0.3s ease-in 0s;
+}
+
+.switch-input:checked + .switch-label:before {
+    right: 0;
+    border-color: #49E845;
+}
+
+/* ====================================
+  line-switch style
+=======================================*/
+.line-switch .switch-label {
+    height: 5px
+}
+
+.line-switch .switch-label:before {
+    top: -12px;
+}
+
+.line-switch .switch-input:checked + .switch-label {
+    background-color: #967ADC;
+}
+
+.line-switch .switch-input:checked + .switch-label:before {
+    border-color: #967ADC;
+}
+
+/* ====================================
+  Regular-switch style
+=======================================*/
+.regular-switch .switch-label {
+    background: rgb(252, 252, 252);
+    background: linear-gradient(90deg, rgba(252, 252, 252, 1) 50%, rgba(210, 210, 210, 1) 100%);
+    width: 60px;
+    border: none;
+}
+
+.regular-switch .switch-label:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 66px;
+    height: 36px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 100px;
+    z-index: -1;
+    top: -3px;
+    left: -3px
+}
+
+.regular-switch .switch-label:before {
+    background: rgb(252, 252, 252);
+    background: linear-gradient(-90deg, rgba(252, 252, 252, 1) 50%, rgba(210, 210, 210, 1) 100%);
+    border-color: #dadada;
+    width: 50px;
+    right: 5px;
+    transition: none;
+}
+
+.regular-switch .switch-input:checked + .switch-label {
+    background: rgb(252, 252, 252);
+    background: linear-gradient(-90deg, rgba(252, 252, 252, 1) 50%, rgba(210, 210, 210, 1) 100%);
+    transition: none;
+}
+
+.regular-switch .switch-input:checked + .switch-label:before {
+    background: rgb(252, 252, 252);
+    background: linear-gradient(90deg, rgba(252, 252, 252, 1) 50%, rgba(210, 210, 210, 1) 100%);
+    border-color: #dadada;
+}
+
+/* =================================================================*/
+
+
+.tab-contents > div {
+    display: none;
+}
+
+.tab-contents > div.active {
+    display: block;
+}
+
+/* =================================================================*/
+
+
+.main-panel .card-footer {
+	padding: 0.25rem 1.00rem;
+}
+.input-error
+{
+    font-size: 0.875rem;
+    line-height: 1.4rem;
+    vertical-align: top;
+    margin-bottom: .5rem;
+    display: inline-block;
+}
+.toggle-password {
+    color: #4B49AC;
+}
+
+.field-icon {
+    float: right;
+    margin-top: -32px;
+    position: relative;
+    right: 10px;
+    z-index: 2;
+}
+.dashboard-user-title
+{
+        display: flex;
+    align-items: center;
+}
+.dashboard-user-title h4
+{
+        margin: 0;
+    font-weight: 600;
+    color: #4b49ac;
+    font-size: 16px;
+}
+.custom-radio
+{
+    display: flex;
+    align-items: center;
+}

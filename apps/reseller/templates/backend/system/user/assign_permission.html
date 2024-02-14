@@ -1,0 +1,48 @@
+{% extends 'backend/dashboard/main.html' %}
+{% load form_tags %}
+{% load static %}
+
+ {% block header_resource %}
+
+
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="{% url 'assign_permission' id %}" method="post" id="user_form">
+                    {% csrf_token %}
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Assign Permission for {{ user_type.name }}</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="nav nav-pills mb-3 flex-column " id="pills-tab" role="tablist">
+                                  {% for key, value in get_app_urls.items %}
+                                      <li class="nav-item" >
+                                        <a style="max-width: 200px" class="nav-link active btn-primary" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">{{ key|upper }}</a>
+                                               <div class="d-flex flex-wrap flex-row p-2">
+                                                   {% for i in value %}
+                                                       <span class=" d-flex align-center " style="column-gap: 5px; padding-right: 20px; font-size: 17px">
+                                                           <input name="{{ key }}.{{ i }}" {% if i in permission_list %} checked {% endif %} type="checkbox"> {{ i|capfirst }} </span>
+                                                   {% endfor %}
+                                               </div>
+                                      </li>
+                                  {% endfor %}
+                            </ul>
+
+                             <div class="form-group col-md-12 mb-0">
+                                    <button class="btn btn-sm btn-primary" type="submit">Save</button>
+                                </div>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+
+{% endblock %}

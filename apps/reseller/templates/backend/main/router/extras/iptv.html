@@ -1,0 +1,50 @@
+{% extends 'backend/dashboard/main.html' %}
+{% block content %}
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="row justify-content-between align-items-center pl-4 pr-4 border-bottom pb-3">
+                    <h4 class="card-title d-flex align-items-center m-0">All Livetv</h4>
+                    <a  href="{% url 'router_add' %}" style="height: 40px;vertical-align: middle;display: flex; align-items: center;" class="btn btn-primary" >Add New Livetv</a>
+                </div>
+
+
+                <div class="table-responsive pt-3">
+                    <table id="user_table" class="table dataTable table-bordered" style="width:100%">
+                        <caption></caption>
+                        <th></th>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+    <script>
+        $(document).ready(function () {
+            $('#user_table').DataTable(
+                {
+                    dom: "<'row'<'col-sm-6'l><'col-sm-6'f>>" +
+                        "<'row'<'col-sm-12'tr>>" +
+                        "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+                    ordering: true,
+                    serverSide: true,
+                    "ajax": '{% url "router_data" %}',
+                    rowCallback: function (row, data, index) {
+                        $('td:eq(0)', row).html(index + 1);
+                    },
+                    "columns": [
+                        {title: "#", data: "count", "orderable": false, type: "num"},
+                        {title: "Name", data: "name", "orderable": true, type: "string"},
+                        {title: "Logo", data: "logo", "orderable": true, type: "string"},
+                        {title: "URL", data: "url", "orderable": true, type: "string"},
+                        {title: "Date", data: "date", "orderable": true, type: "string"},
+                        {title: "Option", data: "option", "orderable": true, type: "string"}
+                    ],
+                    "pageLength": 10 // change the page length option to display 50 rows per page
+                }
+            );
+        });
+    </script>
+{% endblock %}

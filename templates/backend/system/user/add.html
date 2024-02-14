@@ -1,0 +1,128 @@
+{% extends 'backend/dashboard/main.html' %}
+{% load form_tags %}
+{% load static %}
+
+ {% block header_resource %}
+
+
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="{% url 'user_add' %}" method="post" id="user_form">
+                    {% csrf_token %}
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>User Add</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Full Name <span class="text-danger">*</span></label>
+                                    {% input type='text' name='username' class='form-control required' placeholder="Full Name" %}
+
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <div class="form-label">Email <span class="text-danger">*</span></div>
+                                    {% input type='email' name='email' class='form-control required' placeholder="Email" %}
+
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Number {{ config.user_types }}</label>
+                                    {% input type='text' name='user_mobile' class='form-control required' placeholder="+88018********" %}
+
+                                </div>
+                                {% if user.user_type == 'SA-2002' %}
+                                <div class="form-group col-md-6 d-flex flex-column">
+                                    <label class="form-label">User Type <span class="text-danger">*</span></label>
+                                    {% select user_types name='user_type' selected='G-1001' class_list='required js-example-basic-single w-100' %}
+                                </div>
+                                {% endif %}
+
+                                {% if not user.user_type == 'SA-2002' and not user.user_type == 'SUA-3003' %}
+                                    <div class="form-group col-md-6 d-flex flex-column">
+                                    <label class="form-label">User Role <span class="text-danger">*</span></label>
+                                    {% select user_roles name='user_role' selected='G-1001' class_list='required js-example-basic-single w-100' %}
+                                </div>
+                                {% endif %}
+
+                                <div class="form-group col-md-6 ">
+                                    <label class="form-label">User Status <span class="text-danger">*</span></label>
+                                    {% select status name='user_status' selected='1' class_list='required' %}
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <div class="form-label">Password <span class="text-danger">*</span></div>
+                                    {% input type='password' name='password' id='password' class='form-control required' placeholder="*******" %}
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <div class="form-label">Confirm Password <span class="text-danger">*</span></div>
+                                        {% input type='password' name='confirm_password' id="confirm_password" class='form-control required' placeholder="*******" %}
+                                </div>
+                                <div class="form-group col-md-12 mb-0">
+                                    <button class="btn btn-sm btn-primary" type="submit">Save</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+    <script type="text/javascript" src="{% static 'assets/plugins/jquery-validation/jquery.validate.js' %}"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $.validator.addMethod("validMobileNumber", function (value, element) {
+                // Remove any spaces or dashes from the input value
+
+                var number = value
+
+                return number.startsWith("+88") && number.length == 14 && /^[0-9+]+$/.test(number);
+
+            }, "Please enter a valid mobile number with +88.");
+
+
+            $("#user_form").validate({
+                rules: {
+                    confirm_password: {
+                        equalTo: "#password"
+                    },
+                    user_mobile: {
+                        validPhoneNumber: false,
+                        required: true,
+                        validMobileNumber: true
+                    },
+
+                },
+                messages: {
+                    full_name: "Please enter a full name.",
+                    email: {
+                        required: "Please enter an email address.",
+                        email: "Please enter a valid email address."
+                    },
+                    user_mobile: "Please enter your mobile number with +88.",
+                    password: "Please enter a password.",
+
+                    confirm_password:
+                        {
+                            equalTo: "Password don't match."
+                        }
+                },
+                errorPlacement: function (error, element) {
+                    error.insertAfter(element); // Display the error message after the invalid input element
+                },
+            });
+        });
+    </script>
+
+
+{% endblock %}

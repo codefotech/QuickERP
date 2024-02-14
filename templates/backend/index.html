@@ -1,0 +1,137 @@
+{% extends 'backend/dashboard/main.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row pb-4">
+        <div class="col-md-12">
+            <h3 class="font-weight-bold text-center ">
+                {% if request.user.is_authenticated %}
+                    Welcome, {{ request.user.name }}!
+                {% endif %}
+            </h3>
+        {% if request.user.user_type == 'RS-5005' or request.user.user_type == 'SR-6006' %}
+                <h4 class="text-center"> Wallet Balance : <span> {{ request.user.wallet_balance }} Taka</span></h4>
+            <h4 class="text-center">
+                <button onclick="show_wallet_modal()" class="btn btn-sm btn-info text-center">Add
+                    Balance
+                </button>
+            </h4>
+        {% endif %}
+
+        </div>
+    </div>
+
+     <div class="modal fade" id="wallet_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Recharge Wallet</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+               <form class="" action="{% url 'add_wallet_balance' %}" method="post">
+                    {% csrf_token %}
+                    <div class="modal-body gry-bg px-3 pt-3">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Amount<span class="text-danger">*</span></label>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" lang="en" class="form-control mb-3" name="amount"
+                                    placeholder="amount" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Payment Method <span class="text-danger">*</span></label>
+                            </div>
+                            <div class="col-md-12">
+                                <!-- Payment Options -->
+                                <div class="row gutters-10">
+                                    <!-- bkash -->
+{#                                    @if (get_setting('bkash') == 1)#}
+                                        <div class="col-12 col-xl-3 col-md-4">
+                                            <label class="aiz-megabox d-block mb-3">
+                                                <input value="bkash" class="online_payment" type="radio"
+                                                    name="payment_method" checked>
+                                                <span class="d-block aiz-megabox-elem rounded-0 p-1">
+                                                    <img src="{% static 'assets/images/organization/bkash.png' %}"  class="img-fit">
+                                                </span>
+                                            </label>
+                                        </div>
+{#                                    @endif#}
+                                    
+
+                                    <!-- sslcommerz -->
+{#                                    @if (get_setting('sslcommerz_payment') == 1)#}
+                                        <div class="col-12 col-xl-3 col-md-4">
+                                            <label class="aiz-megabox d-block mb-3">
+                                                <input value="sslcommerz" class="online_payment" type="radio"
+                                                    name="payment_method" >
+                                                <span class="d-block aiz-megabox-elem rounded-0 p-1">
+                                                    <img src="{% static 'assets/images/organization/sslcommerz.png' %}"
+                                                        class="img-fit">
+                                                   </span>
+                                            </label>
+                                        </div>
+{#                                    @endif#}
+
+{#                                    <!-- nagad -->#}
+{#                                    @if (get_setting('nagad') == 1)#}
+{#                                        <div class="col-12 col-xl-3 col-md-4">#}
+{#                                            <label class="aiz-megabox d-block mb-3">#}
+{#                                                <input value="nagad" class="online_payment" type="radio"#}
+{#                                                    name="payment_method" checked>#}
+{#                                                <span class="d-block aiz-megabox-elem rounded-0 p-1">#}
+{#                                                    <img src="{% static 'assets/images/organization/nagad.png' %}"#}
+{#                                                        class="img-fit">#}
+{#                                                </span>#}
+{#                                            </label>#}
+{#                                        </div>#}
+{#                                    @endif#}
+                                    
+{#                                    #}
+{#                                    <!-- aamarpay -->#}
+{#                                    @if (get_setting('aamarpay') == 1)#}
+{#                                        <div class="col-12 col-xl-3 col-md-4">#}
+{#                                            <label class="aiz-megabox d-block mb-3">#}
+{#                                                <input value="aamarpay" class="online_payment" type="radio"#}
+{#                                                    name="payment_method" checked>#}
+{#                                                <span class="d-block aiz-megabox-elem rounded-0 p-1">#}
+{#                                                    <img src="{% static 'assets/images/organization/aamarpay.png' %}"#}
+{#                                                        class="img-fit">#}
+{#                                                </span>#}
+{#                                            </label>#}
+{#                                        </div>#}
+{#                                    @endif#}
+                                    </div>
+
+                                </div>
+                            </div>
+                    </div>
+                    <div class="form-group text-right">
+                        <button type="submit"
+                            class="btn btn-sm btn-primary transition-3d-hover mr-1">Confirm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>  
+
+    {% if request.user.user_type == 'SA-2002' %}
+      {% include 'backend/dashboard/partials/system.html' %}
+    {% endif %}
+    
+    {% include 'backend/dashboard/partials/card.html' %}
+{% endblock %}
+{% block extra_js %}
+    <script>
+
+        function show_wallet_modal() {
+            $('#wallet_modal').modal('show');
+        }
+    </script>
+{% endblock %}
+
+
+

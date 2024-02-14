@@ -1,0 +1,456 @@
+<ul class="nav flex-column">
+    <!-- Main start -->
+    <li class="nav-item nav-item-head">
+        <h5 style="">Main</h5>
+    </li>
+    <!-- Main end -->
+
+{#    <!-- IP TV M3U8 MODE start -->#}
+{#    <li class="nav-item user position-relative">#}
+{#        <a href="{% url 'iptv' %}" class="nav-link user">#}
+{#            <i class="fa-solid fa-receipt"></i>#}
+{#            <span class="">IP TV M3U8 MODE</span>#}
+{#        </a>#}
+{#    </li>#}
+{#    <!-- IP TV M3U8 MODE end -->#}
+
+    <!-- Hotspot Profile start -->
+    <li class="nav-item user position-relative">
+        <a href="{% url 'hotspot_profile' %}" class="nav-link user">
+            <i class="fa-solid fa-house-user"></i>
+            <span class="">Hotspot Profile</span>
+        </a>
+    </li>
+    <!-- Hotspot Profile end -->
+{##}
+{#    <!-- Activation start -->#}
+{#    <li class="nav-item user position-relative">#}
+{#        <a href="{% url 'activation' %}" class="nav-link user">#}
+{#            <i class="fa-solid fa-house-circle-check"></i>#}
+{#            <span class="">Activation</span>#}
+{#        </a>#}
+{#    </li>#}
+{#    <!-- Activation end -->#}
+
+    <!-- Router OS start -->
+    <li class="nav-item user position-relative">
+        <a href="#" onclick="toggleSubmenu('router')" class="nav-link user">
+            <i class="fa-solid fa-money-bill"></i>
+            <span class="">Router OS</span>
+            <i class="menu-arrow"></i>
+        </a>
+        <ul id="router" class="nav flex-column pl-4">
+            <!-- All Router Access start -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'router_list' %}">
+                    <i class="far fa-dot-circle"></i>
+                    <span>All Router Access</span>
+                </a>
+            </li>
+            <!-- All Router Access end -->
+            <!-- Import PPPoE start -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'router_import' %}">
+                    <i class="far fa-dot-circle"></i>
+                    <span>Import PPPoE</span>
+                </a>
+            </li>
+            <!-- Import PPPoE end -->
+        </ul>
+    </li>
+    <!-- Router OS end -->
+
+    <!-- Customers start -->
+    <li class="nav-item user position-relative">
+        <a href="#" onclick="toggleSubmenu('customers')" class="nav-link user">
+            <i class="fa-solid fa-user-group"></i>
+            <span class="">Customers</span>
+            <i class="menu-arrow"></i>
+        </a>
+        <ul id="customers" class="nav flex-column pl-4">
+            <!-- Customer List start -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'customer_list' %}">
+                    <i class="far fa-dot-circle"></i>
+                    <span>Customer List</span>
+                </a>
+            </li>
+            <!-- Customer List end -->
+        </ul>
+    </li>
+    <!-- Customers end -->
+
+    <!-- Sellers start -->
+    <li class="nav-item user position-relative">
+        <a href="#" onclick="toggleSubmenu('sellers')" class="nav-link user">
+            <i class="fa-regular fa-user"></i>
+            <span class="">Sellers</span>
+            <i class="menu-arrow"></i>
+        </a>
+        <ul id="sellers" class="nav flex-column pl-4">
+            <!-- All Seller start -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'seller_list' %}">
+                    <i class="far fa-dot-circle"></i>
+                    <span>All Seller</span>
+                </a>
+            </li>
+            <!-- All Seller end -->
+
+            <!-- Assign Profiles start -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'assign_profiles' %}">
+                    <i class="far fa-dot-circle"></i>
+                    <span>Assign Profiles</span>
+                </a>
+            </li>
+            <!-- Assign Profiles end -->
+
+            <!-- Assign Vlans start -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'assign_vlans' %}">
+                    <i class="far fa-dot-circle"></i>
+                    <span>Assign Vlans</span>
+                </a>
+            </li>
+            <!-- Assign Vlans end -->
+
+            <!-- Payouts start -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'payouts' %}">
+                    <i class="far fa-dot-circle"></i>
+                    <span>Payouts</span>
+                </a>
+            </li>
+            <!-- Payouts end -->
+
+            <!-- Payout Requests start -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'payouts_requests' %}">
+                    <i class="far fa-dot-circle"></i>
+                    <span>Payout Requests</span>
+                </a>
+            </li>
+            <!-- Payout Requests end -->
+
+            <!-- Seller Verification Form start -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'seller_verification_form' %}">
+                    <i class="far fa-dot-circle"></i>
+                    <span>Seller Verification Form</span>
+                </a>
+            </li>
+            <!-- Seller Verification Form end -->
+        </ul>
+    </li>
+    <!-- Sellers List end -->
+</ul>
+
+
+
+
+  <ul class="nav flex-column">
+        <!-- System start -->
+        <li class="nav-item nav-item-head">
+            <h5 style="">System</h5>
+        </li>
+        <!-- System end -->
+        <!-- User Management start -->
+        <li class="nav-item user position-relative">
+            <a href="#" onclick="toggleSubmenu('user_management')" class="nav-link user">
+                <i class="fas fa-user-cog"></i>
+                <span class="">User Management</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <ul id="user_management" class="nav flex-column pl-4">
+                <!-- Countries start -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'user_list' %}">
+                        <i class="fas fa-users"></i>
+                        <span>User List</span>
+                    </a>
+                </li>
+                <!-- Countries end -->
+            </ul>
+        </li>
+        <!-- Configuration end -->
+
+
+{##}
+{##}
+{#        <!-- Reports start -->#}
+{#        <li class="nav-item user position-relative" ->#}
+{#            <a href="#" onclick="toggleSubmenu('reports')" class="nav-link user">#}
+{#                <i class="fa-solid fa-file-lines"></i>#}
+{#                <span class="">Reports</span>#}
+{#                <i class="menu-arrow"></i>#}
+{#            </a>#}
+{#            <ul id="reports" class="nav flex-column pl-4">#}
+{#                <!-- Wallet Recharge History start -->#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="{% url 'wallet_recharge_history' %}">#}
+{#                        <i class="far fa-dot-circle"></i>#}
+{#                        <span>Wallet Recharge History</span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <!-- Wallet Recharge History end -->#}
+{#            </ul>#}
+{#        </li>#}
+{#        <!-- Reports end -->#}
+
+{#        <!-- Support start -->#}
+{#        <li class="nav-item user position-relative">#}
+{#            <a href="#" onclick="toggleSubmenu('support')" class="nav-link user">#}
+{#                <i class="fa-solid fa-link"></i>#}
+{#                <span class="">Support</span>#}
+{#                <i class="menu-arrow"></i>#}
+{#            </a>#}
+{#            <ul id="support" class="nav flex-column pl-4">#}
+{#                <!-- Ticket start -->#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="{% url 'ticket' %}">#}
+{#                        <i class="far fa-dot-circle"></i>#}
+{#                        <span>Ticket</span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <!-- Ticket end -->#}
+{#            </ul>#}
+{#        </li>#}
+{#        <!-- Support end -->#}
+{##}
+{#        <!-- OTP System start -->#}
+{#        <li class="nav-item user position-relative">#}
+{#            <a href="#" onclick="toggleSubmenu('otp_system')" class="nav-link user">#}
+{#                <i class="fa-solid fa-mobile-retro"></i>#}
+{#                <span class="">OTP System</span>#}
+{#                <i class="menu-arrow"></i>#}
+{#            </a>#}
+{#            <ul id="otp_system" class="nav flex-column pl-4">#}
+{#                <!-- Ticket start -->#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="{% url 'otp_configuration' %}"><i class="far fa-dot-circle"></i><span>OTP Configurations</span></a>#}
+{#                    <a class="nav-link" href="{% url 'sms_template' %}"><i class="far fa-dot-circle"></i><span>SMS Templates</span></a>#}
+{#                    <a class="nav-link" href="{% url 'set_otp_credentials' %}"><i class="far fa-dot-circle"></i><span>Set OTP Credentials</span></a>#}
+{#                </li>#}
+{#                <!-- Ticket end -->#}
+{#            </ul>#}
+{#        </li>#}
+{#        <!-- OTP System end -->#}
+
+{#        <!-- Website Setup start -->#}
+{#        <li class="nav-item user position-relative">#}
+{#            <a href="#" onclick="toggleSubmenu('website_setup')" class="nav-link user">#}
+{#                <i class="fa-solid fa-desktop"></i>#}
+{#                <span class="">Website Setup</span>#}
+{#                <i class="menu-arrow"></i>#}
+{#            </a>#}
+{#            <ul id="website_setup" class="nav flex-column pl-4">#}
+{#                <!-- Header start -->#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="{% url 'header' %}">#}
+{#                        <i class="far fa-dot-circle"></i>#}
+{#                        <span>Header</span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <!-- Header end -->#}
+{##}
+{#                <!-- Footer start -->#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="{% url 'footer' %}">#}
+{#                        <i class="far fa-dot-circle"></i>#}
+{#                        <span>Footer</span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <!-- Footer end -->#}
+{##}
+{#                <!-- Pages start -->#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="{% url 'pages' %}">#}
+{#                        <i class="far fa-dot-circle"></i>#}
+{#                        <span>Pages</span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <!-- Pages end -->#}
+{##}
+{#                <!-- Appearance start -->#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="{% url 'appearance' %}">#}
+{#                        <i class="far fa-dot-circle"></i>#}
+{#                        <span>Appearance</span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <!-- Appearance end -->#}
+{#            </ul>#}
+{#        </li>#}
+{#        <!-- Website Setup end -->#}
+
+{#        <!-- Setup & Configurations start -->#}
+{#        <li class="nav-item user position-relative">#}
+{#            <a href="#" onclick="toggleSubmenu('setup_and_configuration')" class="nav-link user">#}
+{#                <i class="fa-solid fa-gear"></i>#}
+{#                <span class="">Setup & Configurations</span>#}
+{#                <i class="menu-arrow"></i>#}
+{#            </a>#}
+{#            <ul id="setup_and_configuration" class="nav flex-column pl-4">#}
+{#                <!-- General Settings start -->#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="{% url 'general_settings' %}">#}
+{#                        <i class="far fa-dot-circle"></i>#}
+{#                        <span>General Settings</span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <!-- General Settings end -->#}
+{##}
+{#                <!-- Languages start -->#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="{% url 'languages' %}">#}
+{#                        <i class="far fa-dot-circle"></i>#}
+{#                        <span>Languages</span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <!-- Languages end -->#}
+{##}
+{#                <!-- Currency start -->#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="{% url 'currency' %}">#}
+{#                        <i class="far fa-dot-circle"></i>#}
+{#                        <span>Currency</span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <!-- Currency end -->#}
+{##}
+{#                <!-- SMTP Settings start -->#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="{% url 'smtp_settings' %}">#}
+{#                        <i class="far fa-dot-circle"></i>#}
+{#                        <span>SMTP Settings</span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <!-- SMTP Settings end -->#}
+{##}
+{#                <!-- Payment Methods start -->#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="{% url 'payment_methods' %}">#}
+{#                        <i class="far fa-dot-circle"></i>#}
+{#                        <span>Payment Methods</span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <!-- Payment Methods end -->#}
+{##}
+{#                <!-- File System & Cache Configuration start -->#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="{% url 'file_system_and_cache_configuration' %}">#}
+{#                        <i class="far fa-dot-circle"></i>#}
+{#                        <span>File System & Cache Configuration</span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <!-- File System & Cache Configuration end -->#}
+{##}
+{#                <!-- Social Media Logins start -->#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="{% url 'social_media_logins' %}">#}
+{#                        <i class="far fa-dot-circle"></i>#}
+{#                        <span>Social Media Logins</span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <!-- Social Media Logins end -->#}
+{##}
+{#                <!-- Facebook start -->#}
+{#                <li class="nav-item user position-relative" ->#}
+{#                    <a href="#" onclick="toggleSubmenu('facebook')" class="nav-link user">#}
+{#                        <i class="far fa-dot-circle"></i>#}
+{#                        <span class="">Facebook</span>#}
+{#                        <i class="menu-arrow"></i>#}
+{#                    </a>#}
+{#                    <ul id="facebook" class="nav flex-column pl-4">#}
+{#                        <!-- Facebook Chat start -->#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{% url 'facebook_chat' %}">#}
+{#                                <i class="far fa-dot-circle"></i>#}
+{#                                <span>Facebook Chat</span>#}
+{#                            </a>#}
+{#                        </li>#}
+{#                        <!-- Facebook Chat end -->#}
+{##}
+{#                        <!-- Facebook Comment start -->#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{% url 'facebook_comment' %}">#}
+{#                                <i class="far fa-dot-circle"></i>#}
+{#                                <span>Facebook Comment</span>#}
+{#                            </a>#}
+{#                        </li>#}
+{#                        <!-- Facebook Comment end -->#}
+{#                    </ul>#}
+{#                </li>#}
+{#                <!-- Facebook end -->#}
+{##}
+{#                <!-- Google start -->#}
+{#                <li class="nav-item user position-relative" ->#}
+{#                    <a href="#" onclick="toggleSubmenu('google')" class="nav-link user">#}
+{#                        <i class="far fa-dot-circle"></i>#}
+{#                        <span class="">Google</span>#}
+{#                        <i class="menu-arrow"></i>#}
+{#                    </a>#}
+{#                    <ul id="google" class="nav flex-column pl-4">#}
+{#                        <!-- Analytics Tools start -->#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{% url 'analytics_tools' %}">#}
+{#                                <i class="far fa-dot-circle"></i>#}
+{#                                <span>Analytics Tools</span>#}
+{#                            </a>#}
+{#                        </li>#}
+{#                        <!-- Analytics Tools end -->#}
+{##}
+{#                        <!-- Google reCAPTCHA start -->#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{% url 'google_recaptcha' %}">#}
+{#                                <i class="far fa-dot-circle"></i>#}
+{#                                <span>Google reCAPTCHA</span>#}
+{#                            </a>#}
+{#                        </li>#}
+{#                        <!-- Google reCAPTCHA end -->#}
+{##}
+{#                        <!-- Google Map start -->#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{% url 'google_map' %}">#}
+{#                                <i class="far fa-dot-circle"></i>#}
+{#                                <span>Google Map</span>#}
+{#                            </a>#}
+{#                        </li>#}
+{#                        <!-- Google Map end -->#}
+{##}
+{#                        <!-- Google Firebase start -->#}
+{#                        <li class="nav-item">#}
+{#                            <a class="nav-link" href="{% url 'google_firebase' %}">#}
+{#                                <i class="far fa-dot-circle"></i>#}
+{#                                <span>Google Firebase</span>#}
+{#                            </a>#}
+{#                        </li>#}
+{#                        <!-- Google Firebase end -->#}
+{#                    </ul>#}
+{#                </li>#}
+{#                <!-- Google end -->#}
+{#            </ul>#}
+{#        </li>#}
+{#        <!-- Setup & Configurations end -->#}
+
+{#        <!-- System start -->#}
+{#        <li class="nav-item user position-relative mb-50" ->#}
+{#            <a href="#" onclick="toggleSubmenu('system')" class="nav-link user">#}
+{#                <i class="fa-solid fa-arrows-spin"></i>#}
+{#                <span class="">System</span>#}
+{#                <i class="menu-arrow"></i>#}
+{#            </a>#}
+{#            <ul id="system" class="nav flex-column pl-4">#}
+{#                <!-- Server Status start -->#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="{% url 'server_status' %}">#}
+{#                        <i class="far fa-dot-circle"></i>#}
+{#                        <span>Server Status</span>#}
+{#                    </a>#}
+{#                </li>#}
+{#                <!-- Server Status end -->#}
+{#            </ul>#}
+{#        </li>#}
+{#        <!-- System end -->#}
+    </ul>

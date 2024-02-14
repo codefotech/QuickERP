@@ -1,0 +1,7 @@
+{% load form_tags custom_tags %}
+<div class="form-group col-md-12">
+    <input type="text" name="assign_package_id" value="{{ data.id|default_if_none:'' }}" hidden>
+    <div class="form-label text-uppercase">Customer Package Price <span class="text-danger">*</span></div>
+    {% input type='text' name='price' value=data.customer_price class='form-control required' placeholder="" %}
+
+</div>
